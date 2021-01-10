@@ -21,7 +21,7 @@ git commit -m "Delete BOJ1004_남태우"
 
 <details>
   <summary> ## 1주차 </summary>
-  <div markdown="1">
+  <div markdown="2">
 
 [`10828 스택`](https://www.acmicpc.net/problem/10828)  
 [`9093 단어 뒤집기`](https://www.acmicpc.net/problem/9093)  
@@ -30,7 +30,7 @@ git commit -m "Delete BOJ1004_남태우"
 [`1406 에디터`](https://www.acmicpc.net/problem/1406)  
 [`10845 큐`](https://www.acmicpc.net/problem/10845)  
 [`1158 요세푸스 문제`](https://www.acmicpc.net/problem/1158)  
-[`덱 10866`](https://www.acmicpc.net/problem/10866)  
+[`10866 덱`](https://www.acmicpc.net/problem/10866)  
 
 </details>
 
