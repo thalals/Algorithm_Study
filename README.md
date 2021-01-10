@@ -14,9 +14,9 @@
 
 ## 커밋 방법
 
-git commit -m "Create BOJ1004_남태우"  
-git commit -m "Update BOJ1004_남태우_풀이방법"  
-git commit -m "Delete BOJ1004_남태우"
+- git commit -m "Create BOJ1004_남태우"  
+- git commit -m "Update BOJ1004_남태우_풀이방법"  
+- git commit -m "Delete BOJ1004_남태우"
 
 
 ## 1주차
@@ -29,4 +29,38 @@ git commit -m "Delete BOJ1004_남태우"
 [`10845 큐`](https://www.acmicpc.net/problem/10845)  
 [`1158 요세푸스 문제`](https://www.acmicpc.net/problem/1158)  
 [`10866 덱`](https://www.acmicpc.net/problem/10866)  
+
+
+## 2주차
+
+[`17413 단어 뒤집기 2`](https://www.acmicpc.net/problem/17413)  
+[`10799 쇠막대기`](https://www.acmicpc.net/problem/10799)  
+[`17298 오큰수`](https://www.acmicpc.net/problem/17298)  
+[`17299 오등큰수`](https://www.acmicpc.net/problem/17299)  
+[`1935 후위 표기식2`](https://www.acmicpc.net/problem/1935)  
+[`1918 후위 표기식`](https://www.acmicpc.net/problem/1918)  
+
+
+## 3주차
+
+[`10808 알파벳 개수`](https://www.acmicpc.net/problem/10808)  
+[`10809 알파벳 찾기`](https://www.acmicpc.net/problem/10809)  
+[`10820 문자열 분석`](https://www.acmicpc.net/problem/10820)  
+[`2743 단어 길이 재기`](https://www.acmicpc.net/problem/2743)  
+[`11655 ROT13`](https://www.acmicpc.net/problem/11655)  
+[`10824 네 수`](https://www.acmicpc.net/problem/10824)  
+[`11656 접미사 배열`](https://www.acmicpc.net/problem/11656)  
+
+
+## 4주차
+
+[`10430 나머지`](https://www.acmicpc.net/problem/10430)  
+[`2609 최대공약수와 최소공배수`](https://www.acmicpc.net/problem/2609)  
+[`1934 최소공배수`](https://www.acmicpc.net/problem/1934)  
+[`1978 소수 찾기`](https://www.acmicpc.net/problem/1978)  
+[`1929 소수 구하기`](https://www.acmicpc.net/problem/1929)  
+[`6588 골드바흐의 추측`](https://www.acmicpc.net/problem/6588)  
+[`10872 팩토리얼`](https://www.acmicpc.net/problem/10872)  
+[`1676 팩토리얼 0의 개수`](https://www.acmicpc.net/problem/1676)  
+[`2004 조합 0의 개수`](https://www.acmicpc.net/problem/2004)  
 
