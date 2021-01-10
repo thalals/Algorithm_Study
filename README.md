@@ -3,11 +3,11 @@
 
 ## Member
 
-남태우 : C++  
-박형민 : JAVA  
-전세현 : Python  
-한성민 : JAVA  
-김경윤 : _____
+[`남태우`](https://github.com/bn-tw2020) : C++  
+[`박형민`](https://github.com/thalals) : JAVA  
+[`전세현`](https://github.com/jeonhl7579) : Python  
+[`한성민`](https://github.com/songmin9813) : JAVA  
+[`김경윤`](https://github.com/NASA-GukJang) : _____
 
 
 ## 커밋 방법
