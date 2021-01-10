@@ -19,10 +19,8 @@ git commit -m "Update BOJ1004_남태우_풀이방법"
 git commit -m "Delete BOJ1004_남태우"
 
 
-<details>
-  <div markdown="1">
-  <summary> ## 1주차 </summary>
-
+## 1주차
+    
 [`10828 스택`](https://www.acmicpc.net/problem/10828)  
 [`9093 단어 뒤집기`](https://www.acmicpc.net/problem/9093)  
 [`9012 괄호`](https://www.acmicpc.net/problem/9012)  
@@ -31,6 +29,4 @@ git commit -m "Delete BOJ1004_남태우"
 [`10845 큐`](https://www.acmicpc.net/problem/10845)  
 [`1158 요세푸스 문제`](https://www.acmicpc.net/problem/1158)  
 [`10866 덱`](https://www.acmicpc.net/problem/10866)  
-
-</details>
 
