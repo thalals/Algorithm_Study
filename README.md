@@ -3,10 +3,10 @@
 
 ## Member
 
-남태우 : C++
-박형민 : JAVA
-전세현 : Python
-한성민 : JAVA
+남태우 : C++  
+박형민 : JAVA  
+전세현 : Python  
+한성민 : JAVA  
 김경윤 : _____
 
 ## 1주차
