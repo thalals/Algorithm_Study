@@ -20,8 +20,8 @@ git commit -m "Delete BOJ1004_남태우"
 
 
 <details>
-  <summary> 1주차 </summary>
   <div markdown="1">
+  <summary> ## 1주차 </summary>
 
 [`10828 스택`](https://www.acmicpc.net/problem/10828)  
 [`9093 단어 뒤집기`](https://www.acmicpc.net/problem/9093)  
