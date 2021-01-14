@@ -1,4 +1,5 @@
 # 시간 초과
+# 2차 덱으로 해보기
 import sys
 
 input=sys.stdin.readline
