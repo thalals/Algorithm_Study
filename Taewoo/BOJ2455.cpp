@@ -11,5 +11,6 @@ int main(){
         total = total+b-a;
         answer= max(total, answer);
     }
+    
     cout<<answer<<'\n';
 }
