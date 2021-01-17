@@ -1,7 +1,7 @@
 # 2021 상반기 Algorithm_Study
 
 
-[1주차](#1주차)  [2주차](#2주차) [3주차](#3주차)  [4주차](#4주차)
+[1주차](#1주차)  [2주차](#2주차) [3주차](#3주차)  [4주차](#4주차)  [5주차](#5주차)  [6주차](#6주차)
 
 ## Member
 
@@ -64,3 +64,20 @@
 [`1676 팩토리얼 0의 개수`](https://www.acmicpc.net/problem/1676)  
 [`2004 조합 0의 개수`](https://www.acmicpc.net/problem/2004)  
 
+
+## 5주차
+
+[`1463 1로 만들기`](https://www.acmicpc.net/problem/1463)  
+[`11726 2xn 타일링`](https://www.acmicpc.net/problem/11726)  
+[`11727 2xn 타일링2`](https://www.acmicpc.net/problem/11727)  
+[`9095 1,2,3 더하기`](https://www.acmicpc.net/problem/9095)  
+[`11052 카드 구매하기`](https://www.acmicpc.net/problem/11052)
+
+
+## 6주차
+
+[`16194 카드 구매하기2`](https://www.acmicpc.net/problem/16194)  
+[`15990 1,2,3 더하기 5`](https://www.acmicpc.net/problem/15990)  
+[`10844 쉬운 계단 수`](https://www.acmicpc.net/problem/10844)  
+[`2193 이친수`](https://www.acmicpc.net/problem/2193)  
+[`11053 가장 긴 증가하는 부분 수열`](https://www.acmicpc.net/problem/11053)
