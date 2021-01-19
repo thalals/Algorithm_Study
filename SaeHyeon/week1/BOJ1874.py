@@ -13,11 +13,9 @@ for i in range(0,n):
         array.append(cnt)
         cnt+=1
         stack.append("+")
-        print("+")
     if array[-1] == m:
         array.pop()
         stack.append("-")
-        print("-")
     else:
         result=False
 
