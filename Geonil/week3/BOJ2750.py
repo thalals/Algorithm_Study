@@ -1,6 +1,8 @@
 import sys
 In = sys.stdin.readline
 
+# 168ms
+
 
 def ascending(lst):
     # bubble sort
