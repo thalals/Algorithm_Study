@@ -1,3 +1,6 @@
+import sys
+input=sys.stdin.readline
+
 N=int(input())
 li=[]
 for i in range(N):
