@@ -50,28 +50,8 @@
 
 ## 4주차
 
-[`10430 나머지`](https://www.acmicpc.net/problem/10430)  
-[`2609 최대공약수와 최소공배수`](https://www.acmicpc.net/problem/2609)  
-[`1934 최소공배수`](https://www.acmicpc.net/problem/1934)  
-[`1978 소수 찾기`](https://www.acmicpc.net/problem/1978)  
-[`1929 소수 구하기`](https://www.acmicpc.net/problem/1929)  
-[`6588 골드바흐의 추측`](https://www.acmicpc.net/problem/6588)  
-[`10872 팩토리얼`](https://www.acmicpc.net/problem/10872)  
-[`1676 팩토리얼 0의 개수`](https://www.acmicpc.net/problem/1676)  
-[`2004 조합 0의 개수`](https://www.acmicpc.net/problem/2004)
-
-## 5주차
-
-[`1463 1로 만들기`](https://www.acmicpc.net/problem/1463)  
-[`11726 2xn 타일링`](https://www.acmicpc.net/problem/11726)  
-[`11727 2xn 타일링2`](https://www.acmicpc.net/problem/11727)  
-[`9095 1,2,3 더하기`](https://www.acmicpc.net/problem/9095)  
-[`11052 카드 구매하기`](https://www.acmicpc.net/problem/11052)
-
-## 6주차
-
-[`16194 카드 구매하기2`](https://www.acmicpc.net/problem/16194)  
-[`15990 1,2,3 더하기 5`](https://www.acmicpc.net/problem/15990)  
-[`10844 쉬운 계단 수`](https://www.acmicpc.net/problem/10844)  
-[`2193 이친수`](https://www.acmicpc.net/problem/2193)  
-[`11053 가장 긴 증가하는 부분 수열`](https://www.acmicpc.net/problem/11053)
+[`2798 블랙잭`](https://www.acmicpc.net/problem/2798)  
+[`2231 분해합`](https://www.acmicpc.net/problem/2231)  
+[`7568 덩치`](https://www.acmicpc.net/problem/7568)  
+[`1018 체스판 다시 칠하기`](https://www.acmicpc.net/problem/1018)  
+[`1436 영화감독 숌`](https://www.acmicpc.net/problem/1436)
