@@ -3,10 +3,14 @@
 ## Member
 
 [`남태우`](https://github.com/bn-tw2020) : C++  
+[`김경윤`](https://github.com/NASA-GukJang) : C++
 [`박형민`](https://github.com/thalals) : JAVA  
-[`전세현`](https://github.com/jeonhl7579) : Python  
 [`한성민`](https://github.com/songmin9813) : JAVA  
-[`김경윤`](https://github.com/NASA-GukJang) : **\_**
+[`윤건일`](https://github.com/Gun1Yun) : Python
+[`전세현`](https://github.com/jeonhl7579) : Python  
+[`김승환`](https://github.com/seunghw) : Python
+
+
 
 ## 커밋 방법
 
