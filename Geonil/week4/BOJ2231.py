@@ -3,7 +3,6 @@ In = sys.stdin.readline
 
 
 def creater(num):
-    # 자리수 구하기
     answer = 0
     length = len(str(num))
     start_num = max(0, num - 9*length)
