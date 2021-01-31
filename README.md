@@ -22,18 +22,13 @@
   - ()에 들어갈 것은 자신의 현재 상태를 표시해주면 될 것같습니다.
   - 예) (막힘), (수정), (런타임에러), (문제이해중) ...
 * 잘못 등록한 상황
-- git commit -m "Delete BOJ1004_삭제"
+  - git commit -m "Delete BOJ1004_삭제"
 
 ## 1주차
 
-[`10828 스택`](https://www.acmicpc.net/problem/10828)  
-[`9093 단어 뒤집기`](https://www.acmicpc.net/problem/9093)  
-[`9012 괄호`](https://www.acmicpc.net/problem/9012)  
-[`1874 스택 수열`](https://www.acmicpc.net/problem/1874)  
-[`1406 에디터`](https://www.acmicpc.net/problem/1406)  
-[`10845 큐`](https://www.acmicpc.net/problem/10845)  
-[`1158 요세푸스 문제`](https://www.acmicpc.net/problem/1158)  
-[`10866 덱`](https://www.acmicpc.net/problem/10866)
+[`10828 스택`](https://www.acmicpc.net/problem/10828)  [`9093 단어 뒤집기`](https://www.acmicpc.net/problem/9093)  [`9012 괄호`](https://www.acmicpc.net/problem/9012)  
+[`1874 스택 수열`](https://www.acmicpc.net/problem/1874)  [`1406 에디터`](https://www.acmicpc.net/problem/1406)  [`10845 큐`](https://www.acmicpc.net/problem/10845)  
+[`1158 요세푸스 문제`](https://www.acmicpc.net/problem/1158)  [`10866 덱`](https://www.acmicpc.net/problem/10866)
 
 ## 2주차
 
