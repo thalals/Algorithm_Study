@@ -15,9 +15,14 @@
 
 ## 커밋 방법
 
-- git commit -m "Create BOJ1004\_남태우"
-- git commit -m "Update BOJ1004*남태우*풀이방법"
-- git commit -m "Delete BOJ1004\_남태우"
+* 문제 풀이 맞춘 경우
+  - git commit -m "Create BOJ1004_해결"
+* 문제 풀이 진행중, 수정, 막힌 상황
+  - git commit -m "Update BOJ1004_진행중(막힘)"
+  - ()에 들어갈 것은 자신의 현재 상태를 표시해주면 될 것같습니다.
+  - 예) (막힘), (수정), (런타임에러), (문제이해중) ...
+* 잘못 등록한 상황
+- git commit -m "Delete BOJ1004_삭제"
 
 ## 1주차
 
