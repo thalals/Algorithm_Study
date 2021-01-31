@@ -23,6 +23,15 @@
         <td>
             <a href="https://solved.ac/ap4o"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=ap4o" /></a>
         </td>
+        
+        <td align="center" width="130px" height="160px">
+            <a href="https://github.com/thalals"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/42319300?s=460&u=feb753590ea1a1d094b08573bb11f15e801e63cc&v=4" /></a>
+            <br />
+            <a href="https://github.com/thalals">박형민</a>
+        </td>
+        <td>
+            <a href="https://solved.ac/thalals"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=thalals" /></a>
+        </td>
     </tr>
 </table>
 
