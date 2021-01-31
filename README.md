@@ -16,7 +16,7 @@
         <td align="center" width="130px" height="160px">
             <a href="https://github.com/ap4o"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/66770613?s=460&u=282042bf415e9b361e2b804c554389593b2ff760&v=4" /></a>
             <br />
-            <a href="https://github.com/ap4o">남태우</a>
+            <a href="https://github.com/bn-tw2020">남태우</a>
         </td>
         <td>
             <a href="https://solved.ac/ap4o"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=ap4o" /></a>
