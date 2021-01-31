@@ -26,7 +26,7 @@
     </tr>
 </table>
 
-## 커밋 방법
+## Commit
 
 * 문제 풀이 맞춘 경우
   - git commit -m "Create BOJ1004_해결"
