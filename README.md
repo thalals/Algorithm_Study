@@ -63,7 +63,7 @@
             <a href="https://github.com/jeonhl7579">전세현</a>
         </td>
         <td>
-            <a href="https://solved.ac/jeonhl7579"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=jeonhl7579" /></a>
+            <a href="https://solved.ac/dhktp123"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=dhktp123" /></a>
         </td>
     </tr>
     <tr>
@@ -73,7 +73,7 @@
             <a href="https://github.com/Gun1Yun">윤건일</a>
         </td>
         <td>
-            <a href="https://solved.ac/Gun1Yun"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=Gun1Yun" /></a>
+            <a href="https://solved.ac/gun1yun"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=gun1yun" /></a>
         </td>
         <td align="center" width="130px" height="160px">
             <a href="https://github.com/lee1nna"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/71548623?s=460&u=de7d3ecc50402608132a7f6f635d098e5d6470d4&v=4" /></a>
