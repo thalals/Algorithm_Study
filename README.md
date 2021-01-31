@@ -68,6 +68,24 @@
             <a href="https://solved.ac/jeonhl7579"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=jeonhl7579" /></a>
         </td>
     </tr>
+    <tr>
+        <td align="center" width="130px" height="160px">
+            <a href="https://github.com/Gun1Yun"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/58355979?s=460&v=4" /></a>
+            <br />
+            <a href="https://github.com/Gun1Yun">윤건일</a>
+        </td>
+        <td>
+            <a href="https://solved.ac/Gun1Yun"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=Gun1Yun" /></a>
+        </td>
+        <td align="center" width="130px" height="160px">
+            <a href="https://github.com/lee1nna"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/71548623?s=460&u=de7d3ecc50402608132a7f6f635d098e5d6470d4&v=4" /></a>
+            <br />
+            <a href="https://github.com/lee1nna">이한나</a>
+        </td>
+        <td>
+            <a href="https://solved.ac/lee1nna"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=lee1nna" /></a>
+        </td>
+    </tr>
 </table>
 
 ## Commit
