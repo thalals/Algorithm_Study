@@ -32,7 +32,6 @@
             <a href="https://solved.ac/thalals"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=thalals" /></a>
         </td>
     </tr>
-    
     <tr>
         <td align="center" width="130px" height="160px">
             <a href="https://github.com/seunghw"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/70190106?s=460&v=4" /></a>
@@ -41,8 +40,7 @@
         </td>
         <td>
             <a href="https://solved.ac/sjn6020"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=sjn6020" /></a>
-        </td>
-        
+        </td>        
         <td align="center" width="130px" height="160px">
             <a href="https://github.com/thalals"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/53989855?s=460&u=b9eb39f346a7e519bd50ffc3481872821f2f28dd&v=4" /></a>
             <br />
