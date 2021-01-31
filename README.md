@@ -2,17 +2,6 @@
 
 ## Member
 
-[`남태우`](https://github.com/bn-tw2020) : C++  
-[`김경윤`](https://github.com/NASA-GukJang) : C++  
-[`박형민`](https://github.com/thalals) : JAVA  
-[`한성민`](https://github.com/songmin9813) : JAVA  
-[`윤건일`](https://github.com/Gun1Yun) : Python  
-[`전세현`](https://github.com/jeonhl7579) : Python  
-[`김승환`](https://github.com/seunghw) : Python  
-[`이한나`](https://github.com/lee1nna) : ??  
-
-## Contributors
-
 <table>
     <tr>
         <td align="center" width="130px" height="160px">
@@ -98,6 +87,12 @@
   - 예) (막힘), (수정), (런타임에러), (문제이해중) ...
 * 잘못 등록한 상황
   - git commit -m "Delete BOJ1004_삭제"
+
+
+| 주차 | 링크                          | 상태                |
+|  :--:  | :--------------------------: | :-----------------: |
+| 1주차   | Data Structure               | 자료구조            | 
+
 
 ## 1주차
 
