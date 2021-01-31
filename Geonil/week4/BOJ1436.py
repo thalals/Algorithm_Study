@@ -2,34 +2,36 @@ import sys
 In = sys.stdin.readline
 
 
+def checking_triple(string):
+    last_idx = len(string)-3
+    for i in range(last_idx+1):
+        if string[i:i+3] == '666':
+            return True
+    return False
+
+
+def last_666(string):
+    f = string[:-3]
+    l = string[-3:]
+    if '6' in f:
+        return False
+    elif l == '666':
+        return True
+
+
 def main():
     num = int(In())
-
-    end_num = '666'
-    cnt = 1
-    length = 0
+    answer = 666
 
     while True:
-        if num - cnt <= 0:
+        if checking_triple(str(answer)):
+            num -= 1
+        if num == 0:
             break
 
-        num -= cnt
+        answer += 1
 
-        cnt = 0
-        length += 1
-
-        for l in range(length+1):
-            if l < length:
-                cnt = cnt*9 + pow(10, l)
-            else:
-                cnt = cnt*8 + pow(10, l)
-
-    radix = length + 3
-    print('radix : ', radix)
-    print('count : ', cnt)
-    print('num : ', num)
-
-    front = str(pow(10, length))
+    print(answer)
 
 
 main()
