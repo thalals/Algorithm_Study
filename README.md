@@ -50,6 +50,24 @@
             <a href="https://solved.ac/songmin9813"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=songmin9813" /></a>
         </td>
     </tr>
+    <tr>
+        <td align="center" width="130px" height="160px">
+            <a href="https://github.com/NASA-GukJang"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/39180786?s=460&u=4d9b554cd7ef1e67b114b1f331fa730477f21fcc&v=4" /></a>
+            <br />
+            <a href="https://github.com/NASA-GukJang">김경윤</a>
+        </td>
+        <td>
+            <a href="https://solved.ac/gukjang1997"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=gukjang1997" /></a>
+        </td>
+        <td align="center" width="130px" height="160px">
+            <a href="https://github.com/jeonhl7579"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/68419483?s=460&v=4" /></a>
+            <br />
+            <a href="https://github.com/jeonhl7579">전세현</a>
+        </td>
+        <td>
+            <a href="https://solved.ac/jeonhl7579"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=jeonhl7579" /></a>
+        </td>
+    </tr>
 </table>
 
 ## Commit
