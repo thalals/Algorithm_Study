@@ -114,8 +114,18 @@
 * 참고는 절대로 풀지 못할 것 같을 때 참고하세요. 주로 스터디 하는 사람들과의 소통을 하고 이것을 보지 않길 권장합니다.
 * 문제 풀다가 생각하다가 절대로 풀지 못할 것 같으면 같이 스터디하는 사람의 코드를 참고하세요.
 
-[윤건일][Genoil]  [박형민][Hyeongmin]  [김경윤][KyeongYoon]  [전세현][SaeHyeon]  [김승환][Seunghwan]  [한성민][Sungmin]  [남태우][Taewoo]  
- 
+|  이름  | 바로가기         |
+|:-----:|--------------:|
+|윤건일   | [바로가기][Geonil] |
+|박형민   | [바로가기][Hyeongmin] |
+|김경윤   | [바로가기][KyeongYoon] |
+|전세현   | [바로가기][SaeHyeon] |
+|김승환   | [바로가기][Seunghwan] |
+|한성민   | [바로가기][Sungmin] |
+|남태우   | [바로가기][Taewoo] |
+|이한나   | [바로가기][] |
+
+
 [TODO]: https://img.shields.io/badge/-TODO-DFFD26
 [DOING]: https://img.shields.io/badge/-DOING-31AE0F
 [DONE]: https://img.shields.io/badge/-DONE-0885CC
