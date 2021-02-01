@@ -1,13 +1,18 @@
 # 2021 상반기 Algorithm_Study
 
 ## 목차
-
-1. [Member](#Member)
-2. [Commit](#Commit)
-3. [Problem](#Problem)
-4. [Reference](#Reference)
+1. [Intro](#Intro)
+2. [Member](#Member)
+3. [Commit](#Commit)
+4. [Problem](#Problem)
+5. [Reference](#Reference)
 
 ---
+
+## Intro
+
+* 2021. 1. 7 ~
+
 
 ## Member
 
