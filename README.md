@@ -125,7 +125,8 @@
 |  5주차  | | ![status][TODO]|                 | ![status][TODO]|
 |  5주차  | | ![status][TODO]|                 | ![status][TODO]|
 
-
+* 21년 01월 14일 DFS, BFS 이론 정리
+* 21년 01월 21일 정렬 이론정리(선택, 삽입, 버블, 퀵, 힙, 합병)
 
 ## Reference
 
