@@ -87,7 +87,7 @@
             <a href="https://github.com/lee1nna">이한나</a>
         </td>
         <td>
-            <a href="https://solved.ac/lee1nna"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=lee1nna" /></a>
+            <a href="https://solved.ac/dlgkssk02"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=dlgkssk02" /></a>
         </td>
     </tr>
 </table>
