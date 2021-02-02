@@ -57,18 +57,18 @@ public class B1018 {
 				}
 			}
 			minCount=x*y;
-			for(int i=0;i<=x-8;i++) {
-				countW=0;
-				countB=0;
-				for(int i1=0;i1<=y-8;i1++) {
-					for(int i2=0+i;i2<i+8;i2++) {
-						for(int i3=0+i1;i3<i1+8;i3++) {
+			for(int i=0;i<x-7;i++) {
+				for(int i1=0;i1<y-7;i1++) {
+					for(int i2=i;i2<i+8;i2++) {
+						for(int i3=i1;i3<i1+8;i3++) {
 							countW+=array[i2][i3].countW;
 							countB+=array[i2][i3].countB;
 						}
 					}
-					if(minCount>countW)minCount=countW;
-					else if(minCount>countB)minCount=countB;
+					if(countB>countW&&minCount>countW)minCount=countW;
+					else if(countB<=countW&&minCount>countB)minCount=countB;
+					countW=0;
+					countB=0;
 				}
 			}
 			output.write(String.valueOf(minCount));
