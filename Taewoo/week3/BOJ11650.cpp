@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 struct node {
     int x, y;
 
@@ -8,6 +9,7 @@ struct node {
         else return x < a.x;
     }
 };
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
