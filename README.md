@@ -149,7 +149,7 @@
 |김승환   | [바로가기][Seunghwan] |
 |한성민   | [바로가기][Sungmin] |
 |남태우   | [바로가기][Taewoo] |
-|이한나   | [바로가기][] |
+|이한나   | [바로가기][hanna] |
 
 
 [TODO]: https://img.shields.io/badge/-TODO-DFFD26
@@ -162,3 +162,4 @@
 [Seunghwan]: ./Seunghwan
 [Sungmin]: ./Sungmin
 [Taewoo]: ./Taewoo
+[hanna]: ./hanna
