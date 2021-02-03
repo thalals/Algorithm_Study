@@ -12,6 +12,7 @@ public class B1436 {
 			int count=0;
 			int num=665;
 			int digitCount,temp;
+			//처음에 num을 1씩 증가시키면서 스트링 변환->.equals("6")를 이용하였으나 메모리 초과 발생. 자바 이용 시 참고
 			while(x!=count) {
 				digitCount=0;
 				num++;

@@ -5,8 +5,9 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 public class B1018 {
 	static class Board{
-		int countW;
-		int countB;
+		//개별 정사각형에 색칠될 정보를 각각 집어넣기 위해 생성한 클래스
+		int countW;//해당 정사각형이 흰색 방법에서 칠해지면 +1
+		int countB;//해당 정사각형이 검은색 방법에서 칠해지면 +1
 		Board(){
 			this.countB=0;
 			this.countW=0;
@@ -56,6 +57,8 @@ public class B1018 {
 					}
 				}
 			}
+			//지금까지 받은 모든 입력을 X*Y개의 클래스 정보로 치환한다.
+			//아래는 충격과 공포의 4중 for문
 			minCount=x*y;
 			for(int i=0;i<x-7;i++) {
 				for(int i1=0;i1<y-7;i1++) {
