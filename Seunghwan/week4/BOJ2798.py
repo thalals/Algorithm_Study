@@ -5,6 +5,7 @@
 #   첫째 줄에 M을 넘지 않으면서 M에 최대한 가까운 카드 3장의 합을 출력한다.
 
 
+
 from itertools import combinations 
 # 조합 : 서로다른 n개에서 서로다른 r개 (순서상관없이)
 
