@@ -1,3 +1,5 @@
+// 시간 복잡도 50x50x8x8
+// 완전 탐색 충분히 가능
 #include<bits/stdc++.h>
 using namespace std;
 
