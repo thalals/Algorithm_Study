@@ -119,12 +119,12 @@
 |  3주차  | [`10989 수 정렬하기 3`](https://www.acmicpc.net/problem/10989) | ![status][DONE]| [`2108 통계학`](https://www.acmicpc.net/problem/2108) | ![status][DONE]  |
 |  3주차  | [`1427 소트인사이드`](https://www.acmicpc.net/problem/1427)| ![status][DONE]|[`11650 좌표 정렬하기`](https://www.acmicpc.net/problem/11650)| ![status][DONE]  |
 |  3주차  | [`11651 좌표 정렬하기 2`](https://www.acmicpc.net/problem/11651)| ![status][DONE]|[`1181 단어 정렬`](https://www.acmicpc.net/problem/1181)| ![status][DONE]  |
-|  4주차  | [`2798 블랙잭`](https://www.acmicpc.net/problem/2798)| ![status][DOING]| [`2231 분해합`](https://www.acmicpc.net/problem/2231)|![status][DOING]|
-|  4주차  | [`7568 덩치`](https://www.acmicpc.net/problem/7568)| ![status][DOING]|  [`1018 체스판 다시 칠하기`](https://www.acmicpc.net/problem/1018)|![status][DOING]|
-|  4주차  | [`1436 영화감독 숌`](https://www.acmicpc.net/problem/1436)| ![status][DOING]|                 |          |
-|  5주차  | | ![status][TODO]|                 | ![status][TODO]|
-|  5주차  | | ![status][TODO]|                 | ![status][TODO]|
-|  5주차  | | ![status][TODO]|                 | ![status][TODO]|
+|  4주차  | [`2798 블랙잭`](https://www.acmicpc.net/problem/2798)| ![status][DONE]| [`2231 분해합`](https://www.acmicpc.net/problem/2231)|![status][DONE]|
+|  4주차  | [`7568 덩치`](https://www.acmicpc.net/problem/7568)| ![status][DONE]|  [`1018 체스판 다시 칠하기`](https://www.acmicpc.net/problem/1018)|![status][DONE]|
+|  4주차  | [`1436 영화감독 숌`](https://www.acmicpc.net/problem/1436)| ![status][DONE]|                 |          |
+|  5주차  | [`2606 바이러스`](https://www.acmicpc.net/problem/2606)| ![status][DOING]|[`2667 단지번호 붙이기`](https://www.acmicpc.net/problem/2667)| ![status][DOING]|
+|  5주차  | [`7576 토마토`](https://www.acmicpc.net/problem/7576)| ![status][DOING]|[`1697 숨바꼭질`](https://www.acmicpc.net/problem/1697)| ![status][DOING]|
+|  5주차  | [`13549 숨바꼭질3`](https://www.acmicpc.net/problem/13549)| ![status][DOING]|[`2206 벽 부수고 이동하기`](https://www.acmicpc.net/problem/2206)| ![status][DOING]|
 
 
 
