@@ -112,6 +112,7 @@
 |  1주차  | [`9012 괄호`](https://www.acmicpc.net/problem/9012)  | ![status][DONE]| [`1874 스택 수열`](https://www.acmicpc.net/problem/1874) | ![status][DONE]  |
 |  1주차  | [`1406 에디터`](https://www.acmicpc.net/problem/1406) | ![status][DONE]| [`10845 큐`](https://www.acmicpc.net/problem/10845)    | ![status][DONE]  |
 |  1주차  | [`1158 요세푸스 문제`](https://www.acmicpc.net/problem/1158) | ![status][DONE]| [`10866 덱`](https://www.acmicpc.net/problem/10866)  | ![status][DONE]  |
+|                                                                                                                                                           |
 |  2주차  | [`17413 단어 뒤집기 2`](https://www.acmicpc.net/problem/17413)| ![status][DONE]| [`10799 쇠막대기`](https://www.acmicpc.net/problem/10799)|![status][DONE]  |
 |  2주차  | [`17298 오큰수`](https://www.acmicpc.net/problem/17298) | ![status][DONE]| [`17299 오등큰수`](https://www.acmicpc.net/problem/17299)  | ![status][DONE]  |
 |  2주차  | [`1935 후위 표기식2`](https://www.acmicpc.net/problem/1935) | ![status][DONE]| [`1918 후위 표기식`](https://www.acmicpc.net/problem/1918)| ![status][DONE]  |
