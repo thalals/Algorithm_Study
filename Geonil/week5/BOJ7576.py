@@ -22,8 +22,16 @@ def bfs(house, n, m):
     for i in range(n):
         for j in range(m):
             if house[i][j] == 1 and visited[i][j] == 0:
-                visited[i][j] = 1
-                queue.append([i, j])
+                for mx, my in zip(x, y):
+                    next_x = i + mx
+                    next_y = j + my
+
+                    if 0 <= next_x and next_x < n and 0 <= next_y and next_y < m:
+                        if house[next_x][next_y] == 0 and visited[next_x][next_y] == 0:
+                            house[next_x][next_y] = 1
+                            visited[next_x][next_y] = 1
+                            queue.append([next_x, next_y])
+
     day += 1
     divider = len(queue)
 
@@ -44,16 +52,7 @@ def bfs(house, n, m):
                     visited[next_x][next_y] = 1
                     queue.append([next_x, next_y])
 
-        # if check_done(house):
-        #     break
-
         if divider == check_tomato:
-            for i in range(n):
-                for j in range(m):
-                    print(house[i][j], end=' ')
-                print()
-            print(divider, check_tomato, day)
-            print(queue)
             divider = len(queue)
             check_tomato = 0
             day += 1
@@ -61,7 +60,7 @@ def bfs(house, n, m):
     if not check_done(house):
         return -1
     else:
-        return day
+        return day-1
 
 
 def main():
