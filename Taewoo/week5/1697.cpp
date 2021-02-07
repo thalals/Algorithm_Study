@@ -13,6 +13,8 @@ int bfs(int start) {
     while(!q.empty()) {
         int x = q.front();
         q.pop();
+        
+        if(x == K) break;
 
         dx[0] = x + 1; dx[1] = x - 1; dx[2] = x * 2;
         for(int i = 0; i < 3; i++) {
