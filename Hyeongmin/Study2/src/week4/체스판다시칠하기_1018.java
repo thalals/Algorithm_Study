@@ -32,11 +32,16 @@ public class 체스판다시칠하기_1018 {
 			for (int j = 0; j < m-7; j++) {
 				
 				String copymap[][] = new String[8][8];
-				for(int q =0;q<8;q++)
-					for(int w=0;w<8;w++)
+				String copymap1[][] = new String[8][8];
+
+				for(int q =0;q<8;q++) {
+					for(int w=0;w<8;w++) {
 						copymap[q][w] = map[q+i][w+j];
-				
-				count = map_check(copymap);
+						copymap1[q][w] = map[q+i][w+j];
+
+					}
+				}
+				count = Math.min(reverse_check(copymap1),map_check(copymap));
 				if(count<min)
 					min = count;
 			}
@@ -46,7 +51,43 @@ public class 체스판다시칠하기_1018 {
 		else
 			System.out.println(min);
 	}
+	
+	public static int reverse_check(String copymap[][]) {
+		int count = 0;
 
+		for (int i = 0; i < 8; i++) {
+
+			for (int j = 0; j < 8; j++) {
+				if (i == 0) {
+					if (j == 0){
+						if (copymap[i][j].equals("W"))
+							copymap[i][j] = "B";
+						else if (copymap[i][j].equals("B"))
+							copymap[i][j] = "W";
+					}
+					else {
+						if (copymap[i][j - 1].equals(copymap[i][j])) {
+							count+=1;
+							if (copymap[i][j].equals("W"))
+								copymap[i][j] = "B";
+							else if (copymap[i][j].equals("B"))
+								copymap[i][j] = "W";
+						}
+					}
+				}
+				else {
+					if (copymap[i-1][j].equals(copymap[i][j])) {
+						count+=1;
+						if (copymap[i][j].equals("W"))
+							copymap[i][j] = "B";
+						else if (copymap[i][j].equals("B"))
+							copymap[i][j] = "W";
+					}
+				}
+			}
+		}
+		return count;
+	}
 	public static int map_check(String copymap[][]) {
 		int count = 0;
 
