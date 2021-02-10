@@ -7,14 +7,14 @@ visited = defaultdict()
 
 
 def walk(n):
-    return n-1, n+1
+    return n+1, n-1
 
 
 def bfs(start, target):
     queue = deque()
 
-    queue.append(target)
-    visited[target] = False
+    queue.append(start)
+    visited[start] = False
     time = 0
     sync = 0
     division = 1
@@ -23,23 +23,24 @@ def bfs(start, target):
         now = queue.popleft()
         sync += 1
 
-        if now == start:
+        if now == target:
             return time
 
-        if now % 2 == 0:  # and now // 2 >= start:
-            next1 = now // 2
-            next2 = -1
-        else:
-            next1, next2 = walk(now)
+        next1 = 2*now
+        next2, next3 = walk(now)
 
-        if 0 <= next1:
+        if next1 <= 100000:
             if not next1 in visited:
                 visited[next1] = True
                 queue.append(next1)
-        if 0 <= next2 and next2 <= 100000:
+        if next2 <= 100001:
             if not next2 in visited:
                 visited[next2] = True
                 queue.append(next2)
+        if 0 <= next3:
+            if not next3 in visited:
+                visited[next3] = True
+                queue.append(next3)
 
         if division == sync:
             division = len(queue)
