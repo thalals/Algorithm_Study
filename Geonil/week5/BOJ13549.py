@@ -7,6 +7,8 @@ N, K = map(int, In().split())
 def deep(n, k):
     if n >= k:
         return n-k
+    elif k == 1:
+        return 1
     elif k % 2 == 1:
         return min(deep(n, k-1), deep(n, k+1)) + 1
     else:
