@@ -12,7 +12,7 @@ class DisjointSet:
 
     def find(self, v):
         if self.parent[v] != v:
-            self.parent[v] = self.find(self.parent(v))
+            self.parent[v] = self.find(self.parent[v])
 
         return self.parent[v]
 
