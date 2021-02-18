@@ -51,6 +51,8 @@ public class 토마토_7576 {
 					list.add(a);
 					visit[i][j] = 1;
 				}
+				else if(map[i][j] == -1)
+					visit[i][j] = 0;
 			}
 		}
 		
@@ -59,13 +61,10 @@ public class 토마토_7576 {
 		if(list.isEmpty())
 			System.out.println("-1");
 		
-		else {
-			
-			bfs(n,m);
+		else { 
+			bfs(m,n);
+			System.out.println(check_map(n, m));
 		}
-		
-		System.out.println(count);
-		
 	}
 	public static void bfs(int xsize, int ysize) {
 		
@@ -79,7 +78,9 @@ public class 토마토_7576 {
 				//맵을 벗어나는 경우
 				if(nextx<0 || nexty < 0 || nextx>xsize-1 || nexty > ysize-1)
 					continue;
-				else if(visit[nextx][nexty]== -1 || map[nextx][nexty] == 0){
+				else if( map[nextx][nexty] == -1)
+					visit[nextx][nexty] = 0;
+				else if(visit[nextx][nexty]== -1 && map[nextx][nexty] == 0){
 					xy temp = new xy(nextx,nexty);
 					
 					list.offer(temp);
@@ -89,6 +90,29 @@ public class 토마토_7576 {
 		}
 	}
 	
-	
+	public static int check_map(int n, int m) {
+		boolean minus = false;
+		
+		int max = -2;
+		
+		for(int i =0;i<m;i++) {
+			for(int j=0;j<n;j++) {
+				int temp = visit[i][j];
+				if(temp==-1) {
+					minus = true;
+					break;
+				}
+				
+				if(temp>max)
+					max = temp;
+			}
+		}
+		
+		
+		if(minus)
+			return -1;
+		else 
+			return max-1;
+	}
 
 }
