@@ -130,7 +130,7 @@
 |  5주차  | [`7576 토마토`](https://www.acmicpc.net/problem/7576)| ![status][DONE]|[`1697 숨바꼭질`](https://www.acmicpc.net/problem/1697)| ![status][DONE]|
 |  5주차  | [`13549 숨바꼭질3`](https://www.acmicpc.net/problem/13549)| ![status][DONE]|[`2206 벽 부수고 이동하기`](https://www.acmicpc.net/problem/2206)| ![status][DONE]|
 |                                                                                                                                                           |
-|  7주차  | [`1920 수 찾기`](https://www.acmicpc.net/problem/1920)| ![status][DOING]|[`14502 퇴사`](https://www.acmicpc.net/problem/14502)| ![status][DOING]|
+|  7주차  | [`1920 수 찾기`](https://www.acmicpc.net/problem/1920)| ![status][DOING]|[`14501 퇴사`](https://www.acmicpc.net/problem/14501)| ![status][DOING]|
 |  7주차  | [`11047 동전0`](https://www.acmicpc.net/problem/11047)| ![status][DOING]|[`15649 N과 M(1)`](https://www.acmicpc.net/problem/15649)| ![status][DOING]|
 |  7주차  | [`11399 ATM`](https://www.acmicpc.net/problem/11399)| ![status][DOING]|[`16964 DFS 스페셜 저지`](https://www.acmicpc.net/problem/16964)| ![status][DOING]|
 
