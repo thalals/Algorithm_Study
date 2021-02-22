@@ -13,30 +13,34 @@ for _ in range(n-1):
     d_dict[v1].append(v2)
     d_dict[v2].append(v1)
 
-user_answer = In().rstrip()
+user_answer = list(map(int, In().split()))
+cnt = 0
 
 
 def dfs(x):
+    global cnt
+
     if not visited[x]:
         visited[x] = True
-        check_arr.append(str(x))
-        check_arr.append(' ')
+        # print('visit ', x)
 
-        for v in d_dict[x]:
-            if not visited[v]:
-                dfs(v)
+        for _ in range(len(d_dict[x])):
+            if cnt < len(user_answer):
+                v = user_answer[cnt]
+                if v in d_dict[x]:
+                    if not visited[v]:
+                        cnt += 1
+                        dfs(v)
 
 
 def main():
-    for key in d_dict:
-        d_dict[key].sort()
+    global cnt
 
-    dfs(1)
+    if user_answer[cnt] == 1:
+        cnt += 1
+        dfs(1)
 
-    answer = ''.join(check_arr[:-1])
-    print(answer)
-
-    if answer == user_answer:
+    if cnt == len(user_answer):
         print(1)
     else:
         print(0)
