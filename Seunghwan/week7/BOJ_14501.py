@@ -7,6 +7,7 @@ pay = []
 
 
 
+
 for _ in range(n):
     
 '''
