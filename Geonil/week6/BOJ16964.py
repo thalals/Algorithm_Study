@@ -4,7 +4,6 @@ In = sys.stdin.readline
 
 n = int(In())
 visited = [False]*(n+1)
-check_arr = []
 d_dict = defaultdict(list)
 
 
@@ -22,13 +21,13 @@ def dfs(x):
 
     if not visited[x]:
         visited[x] = True
-        # print('visit ', x)
 
         for _ in range(len(d_dict[x])):
             if cnt < len(user_answer):
                 v = user_answer[cnt]
                 if v in d_dict[x]:
                     if not visited[v]:
+                        d_dict[x].remove(v)
                         cnt += 1
                         dfs(v)
 
