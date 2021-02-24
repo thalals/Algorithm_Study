@@ -45,23 +45,16 @@ const input = (() => {
   return () => stdin[line++];
 })();
 
-
 let n = input()*1;
 let data = input().split(' ').map(Number);
 let m = input()*1;
 let data2 = input().split(' ').map(Number);
 
-function solution(m, data, data2){
-  for(let i=0;i<m;i++)
-  {
-    data2[i]=data.includes(data2[i]);
+for(let i=0;i<m;i++)
+{
+  const binarySearch = (data, data2[i]) => {
+    let left=0;
+    
   }
 }
 
-solution(m,data,data2);
-console.log(data2.map(Number));
-
-// console.log(n);
-// console.log(data[0]);
-// console.log(m);
-// console.log(data2);
