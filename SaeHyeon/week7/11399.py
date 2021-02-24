@@ -7,7 +7,7 @@ li=list(map(int,input().split()))
 def li_sort(li):
     li2=[]
     num=len(li)
-    for i in range(num):
+    for j in range(num):
         li2.append(li.pop(li.index(min(li))))
     return li2
 
