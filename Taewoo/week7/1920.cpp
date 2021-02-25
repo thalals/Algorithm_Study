@@ -5,8 +5,9 @@ vector<int> vec;
 int findNumber(int N) {
     int left = 0;
     int right = vec.size() - 1;
+    int mid;
     while (left < right) {
-        int mid = (left + right) / 2;
+        mid = (left + right) / 2;
         if(vec[mid] < N) {
             left = mid + 1;
         }
@@ -14,6 +15,7 @@ int findNumber(int N) {
             right = mid;
         }
     }
+    cout << "mid : " << mid << '\n';
     return vec[(left + right) / 2] == N;
 }
 
