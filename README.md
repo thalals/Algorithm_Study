@@ -130,9 +130,13 @@
 |  5주차  | [`7576 토마토`](https://www.acmicpc.net/problem/7576)| ![status][DONE]|[`1697 숨바꼭질`](https://www.acmicpc.net/problem/1697)| ![status][DONE]|
 |  5주차  | [`13549 숨바꼭질3`](https://www.acmicpc.net/problem/13549)| ![status][DONE]|[`2206 벽 부수고 이동하기`](https://www.acmicpc.net/problem/2206)| ![status][DONE]|
 |                                                                                                                                                           |
-|  7주차  | [`1920 수 찾기`](https://www.acmicpc.net/problem/1920)| ![status][DOING]|[`14501 퇴사`](https://www.acmicpc.net/problem/14501)| ![status][DOING]|
-|  7주차  | [`11047 동전0`](https://www.acmicpc.net/problem/11047)| ![status][DOING]|[`15649 N과 M(1)`](https://www.acmicpc.net/problem/15649)| ![status][DOING]|
-|  7주차  | [`11399 ATM`](https://www.acmicpc.net/problem/11399)| ![status][DOING]|[`16964 DFS 스페셜 저지`](https://www.acmicpc.net/problem/16964)| ![status][DOING]|
+|  7주차  | [`1920 수 찾기`](https://www.acmicpc.net/problem/1920)| ![status][DONE]|[`14501 퇴사`](https://www.acmicpc.net/problem/14501)| ![status][DONE]|
+|  7주차  | [`11047 동전0`](https://www.acmicpc.net/problem/11047)| ![status][DONE]|[`15649 N과 M(1)`](https://www.acmicpc.net/problem/15649)| ![status][DONE]|
+|  7주차  | [`11399 ATM`](https://www.acmicpc.net/problem/11399)| ![status][DONE]|[`16964 DFS 스페셜 저지`](https://www.acmicpc.net/problem/16964)| ![status][DONE]|
+|                                                                                                                                                           |
+|  8주차  | [`2615 오목`](https://www.acmicpc.net/problem/2615)| ![status][DOING]|[`1976 여행 가자`](https://www.acmicpc.net/problem/1976)| ![status][DOING]|
+|  8주차  | [`18429 근손실`](https://www.acmicpc.net/problem/18429)| ![status][DOING]|[`1931 회의실 배정`](https://www.acmicpc.net/problem/1931)| ![status][DOING]|
+|  8주차  | [`17478 재귀함수가 뭔가요?`](https://www.acmicpc.net/problem/17478)| ![status][DOING]|[`1654 랜선 자르기`](https://www.acmicpc.net/problem/1654)| ![status][DOING]|
 
 
 
@@ -144,6 +148,7 @@
 |  21. 02. 04  | BFS 이론 정리, BFS 1문제 풀기|
 |  21. 02. 11  | 설날로 인한 개별 공부 + 트리 관련 알고리즘 정리 및 발표 과제|
 |  21. 02. 18  | 트리 관련 알고리즘 발표|
+|  21. 02. 25  | 프로그래머스 스킬체크 1, 2|
 
 ## Reference
 
