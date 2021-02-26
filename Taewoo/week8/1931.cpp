@@ -3,11 +3,11 @@
 using namespace std;
 
 struct meeting {
-    int begin, end;
+    int start, finish;
 
-    bool operator < (const meeting &e) const &{
-        if(end == e.end) return begin < e.begin;
-        else return end < e.end;
+    bool operator < (const meeting &e){
+        if(finish == e.finish) return start < e.start;
+        else return finish < e.finish;
     }
 };
 
@@ -18,17 +18,17 @@ int main() {
     int N; cin >> N;
     vector<meeting> t(N);
     for(int i = 0; i < N; i++) {
-        cin >> t[i].begin >> t[i].end;
+        cin >> t[i].start >> t[i].finish;
     }
 
     sort(t.begin(), t.end());
     
-    int now = t[0].end;
+    int now = t[0].finish;
     int count = 1;
     for(int i = 1; i < N; i++) {
-        if(now <= t[i].begin) {
+        if(now <= t[i].start) {
             count++;
-            now = t[i].end;
+            now = t[i].finish;
         }
     }
     cout << count;
