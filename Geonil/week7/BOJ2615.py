@@ -52,7 +52,6 @@ def main():
     white_map.sort(key=lambda x: (x[1], x[0]))
 
     b_win, loc = check_win(black_map)
-    print(black_map)
 
     if b_win:
         print(1)
