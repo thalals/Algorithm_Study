@@ -1,31 +1,39 @@
 import sys
-#from collections import defaultdict
+from collections import defaultdict
+
 In = sys.stdin.readline
 size = 19
-
-# 대각 : +1 +1 or +1 -1
-# 가로 : 0 +1
-# 새로 : +1 0
-flag = [[1, 1], [1, -1], [0, 1], [1, 0]]
+moves = [[1, 1], [-1, 1], [0, 1], [1, 0]]
 
 
 def check_win(locations):
+    visited = defaultdict(list)
 
     for location in locations:
         x, y = location
 
-        for dx, dy in flag:
+        for flag, move in enumerate(moves):
+            if [x, y] in visited[flag]:
+                continue
             cnt = 1
+            visited[flag].append([x, y])
+            dx, dy = move
             next_x = x + dx
             next_y = y + dy
+
             while True:
-                if [next_x, next_y] in locations:
+                if [next_x, next_y] in locations and [next_x, next_y] not in visited[flag]:
                     cnt += 1
+                    visited[flag].append([next_x, next_y])
                     next_x = next_x + dx
                     next_y = next_y + dy
                 else:
                     break
-        print(cnt)
+
+            if cnt == 5:
+                return True, location
+
+    return False, 0
 
 
 def main():
@@ -39,10 +47,22 @@ def main():
                 black_map.append([i, j+1])
             elif sub_map[j] == 2:
                 white_map.append([i, j+1])
-    black_map.sort(key=lambda x: x[1])
-    white_map.sort(key=lambda x: x[1])
 
-    check_win(black_map)
+    black_map.sort(key=lambda x: (x[1], x[0]))
+    white_map.sort(key=lambda x: (x[1], x[0]))
+
+    b_win, loc = check_win(black_map)
+
+    if b_win:
+        print(1)
+        print(loc[0], loc[1])
+    else:
+        w_win, loc = check_win(white_map)
+        if w_win:
+            print(2)
+            print(loc[0], loc[1])
+        else:
+            print(0)
 
 
 if __name__ == "__main__":
