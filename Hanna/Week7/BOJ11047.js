@@ -34,10 +34,6 @@ while(n--)
     kindOf[i++] = parseInt(input());
 }
 
-console.log(kind);
-console.log(won);
-console.log(kindOf);
-
 for(i = kind-1; i >= 0; i--)
 {
     if(kindOf[i] > won){
