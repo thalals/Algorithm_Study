@@ -11,7 +11,7 @@ public class 오목 {
 	static int count = 0;
 
 	static int dx[] = { 1, 0, -1, 0, 1, 1, -1, -1 };
-	static int dy[] = { 0, 1, 0, -1, 1, -1, 1, -1 };
+	static int dy[] = { 0, 1, 0, -1, 1, -1, -1, 1 };
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -35,9 +35,13 @@ public class 오목 {
 					while(!mc.isEmpty()) {
 						int index = mc.pop();
 						dfs(i,j,index);
-						
+						dfs(i,j,reverse_move(index));
+						count--;
 						if(count==5) {
-							System.out.println(map[i][j]+"\n"+i+" "+j);
+							if(index==5)
+								System.out.println(map[i][j]+"\n"+(i+4)+" "+(j-4));
+							else
+								System.out.println(map[i][j]+"\n"+i+" "+j);
 							return;
 						}
 						count=0;
@@ -49,6 +53,47 @@ public class 오목 {
 		
 		System.out.println(0);
 
+	}
+	
+	static public int reverse_move(int index) {
+		
+		int reverse_index = -1;
+		
+		switch (index) {
+		case 0:
+			reverse_index = 2;
+			break;
+		case 1:
+			reverse_index = 3;
+			break;
+		case 2:
+			reverse_index = 0;
+			break;
+			
+		case 3:
+			reverse_index = 1;
+			break;
+			
+		case 4:
+			reverse_index = 6;
+			break;
+			
+		case 5:
+			reverse_index = 7;
+			break;
+			
+		case 6:
+			reverse_index = 4;
+			break;
+			
+		case 7:
+			reverse_index = 5;
+			break;
+		default:
+			break;
+		}
+		
+		return reverse_index;
 	}
 	
 	static public Stack<Integer> move_check(int x, int y) {
