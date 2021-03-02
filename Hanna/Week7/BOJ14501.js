@@ -26,10 +26,10 @@ let i = 0;
 
 while(n--)
 {
-   let[a,b] = input().split(' ').map(Number);
-   t[i] = a;
-   p[i] = b;
-   i++;
+    let[a,b] = input().split(' ').map(Number);
+    t[i] = a;
+    p[i] = b;
+    i++;
 }
 
 function solution(n,t,p){
