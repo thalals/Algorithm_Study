@@ -20,11 +20,8 @@ def binary_search(left, right):
     mid = (left+right+1)//2
 
     cnt = check_n(mid)
-    print(left, right)
-    print(mid)
-    print()
 
-    if left > right:
+    if left >= right:
         return right
 
     if cnt < n:
