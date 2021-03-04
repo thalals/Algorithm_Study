@@ -1,4 +1,5 @@
 import sys
+sys.setrecursionlimit(10**6)
 In = sys.stdin.readline
 
 k, n = map(int, In().split())
@@ -8,57 +9,35 @@ for _ in range(k):
     lan_wire.append(int(In()))
 
 
-def binary_search(left, right):
-    mid = (left+right)//2
+def check_n(mid):
     cnt = 0
-
     for item in lan_wire:
         cnt += item//mid
+    return cnt
 
-    if left == right:
-        return mid
+
+def binary_search(left, right):
+    mid = (left+right+1)//2
+
+    cnt = check_n(mid)
+    print(left, right)
+    print(mid)
+    print()
+
+    if left > right:
+        return right
 
     if cnt < n:
         return binary_search(left, mid-1)
     else:
-        return binary_search(mid, right)
+        return binary_search(mid+1, right)
 
 
 def main():
-
     less_length = 1
     max_length = max(lan_wire)
-    answer = 1
-    mid = 1
 
-    while less_length <= max_length:
-        cnt = 0
-        mid = max(1, (less_length + max_length)//2)
-
-        for item in lan_wire:
-            cnt += item//mid
-
-        if cnt > n:
-            less_length = mid + 1
-            answer = max(answer, mid)
-        elif cnt < n:
-            max_length = mid - 1
-        else:
-            answer = max(answer, mid)
-            break
-
-    while True:
-        cnt = 0
-        mid = answer + 1
-        for item in lan_wire:
-            cnt += item//mid
-
-        if cnt < n:
-            break
-        else:
-            answer = mid
-
-    print(answer)
+    print(binary_search(less_length, max_length))
 
 
 if __name__ == "__main__":

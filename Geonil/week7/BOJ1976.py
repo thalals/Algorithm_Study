@@ -52,6 +52,7 @@ def main():
                 city[i].append(j+1)
 
     path = list(map(int, In().split()))
+
     if check_possible(path):
         print('YES')
     else:
