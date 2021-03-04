@@ -53,7 +53,6 @@ int findStart(){
             findRow++;
         }
     }
-    //printf("%d %d\n", findRow, findCol);
     check();
 }
 
