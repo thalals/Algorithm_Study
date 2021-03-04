@@ -1,6 +1,7 @@
 # 2021 상반기 Algorithm_Study
 
 ## 목차
+
 1. [Intro](#Intro)
 2. [Member](#Member)
 3. [Commit](#Commit)
@@ -11,9 +12,8 @@
 
 ## Intro
 
-* 일정 : 2021년 01월 07일 ~ 
-* 정기 모임 : 매주 목요일 오후 6시
-
+- 일정 : 2021년 01월 07일 ~
+- 정기 모임 : 매주 목요일 오후 6시
 
 ## Member
 
@@ -95,86 +95,92 @@
 ## Commit
 
 1. **문제 풀이 맞춘 경우**
-  - git commit -m "[ADD] BOJ1004_해결"
-2. **문제 풀이 진행중, 수정, 막힌 상황**
-  - git commit -m "[UPD] BOJ1004_진행중(막힘)"
-  - ()에 들어갈 것은 자신의 현재 상태를 표시해주면 될 것같습니다.
-  - 예) (막힘), (수정), (런타임에러), (문제이해중) ...
-3. **잘못 등록한 상황**
-  - git commit -m "[DEL] BOJ1004_삭제"
 
+- git commit -m "[ADD] BOJ1004\_해결"
+
+2. **문제 풀이 진행중, 수정, 막힌 상황**
+
+- git commit -m "[UPD] BOJ1004\_진행중(막힘)"
+- ()에 들어갈 것은 자신의 현재 상태를 표시해주면 될 것같습니다.
+- 예) (막힘), (수정), (런타임에러), (문제이해중) ...
+
+3. **잘못 등록한 상황**
+
+- git commit -m "[DEL] BOJ1004\_삭제"
 
 ## Problem
 
-|   주차  | 링크                                                 | 상태            | 링크                                                     | 상태             |
-|  :--:  | :-------------------------------------------------: | :-------------:| :----------------------------------------------------: | :-------------:|
-|  1주차  | [`10828 스택`](https://www.acmicpc.net/problem/10828)| ![status][DONE]| [`9093 단어 뒤집기`](https://www.acmicpc.net/problem/9093)| ![status][DONE]  |
-|  1주차  | [`9012 괄호`](https://www.acmicpc.net/problem/9012)  | ![status][DONE]| [`1874 스택 수열`](https://www.acmicpc.net/problem/1874) | ![status][DONE]  |
-|  1주차  | [`1406 에디터`](https://www.acmicpc.net/problem/1406) | ![status][DONE]| [`10845 큐`](https://www.acmicpc.net/problem/10845)    | ![status][DONE]  |
-|  1주차  | [`1158 요세푸스 문제`](https://www.acmicpc.net/problem/1158) | ![status][DONE]| [`10866 덱`](https://www.acmicpc.net/problem/10866)  | ![status][DONE]  |
-|                                                                                                                                                           |
-|  2주차  | [`17413 단어 뒤집기 2`](https://www.acmicpc.net/problem/17413)| ![status][DONE]| [`10799 쇠막대기`](https://www.acmicpc.net/problem/10799)|![status][DONE]  |
-|  2주차  | [`17298 오큰수`](https://www.acmicpc.net/problem/17298) | ![status][DONE]| [`17299 오등큰수`](https://www.acmicpc.net/problem/17299)  | ![status][DONE]  |
-|  2주차  | [`1935 후위 표기식2`](https://www.acmicpc.net/problem/1935) | ![status][DONE]| [`1918 후위 표기식`](https://www.acmicpc.net/problem/1918)| ![status][DONE]  |
-|                                                                                                                                                           |
-|  3주차  | [`2750 수 정렬하기`](https://www.acmicpc.net/problem/2750) | ![status][DONE]| [`2751 수 정렬하기 2`](https://www.acmicpc.net/problem/2751)| ![status][DONE]  |
-|  3주차  | [`10989 수 정렬하기 3`](https://www.acmicpc.net/problem/10989) | ![status][DONE]| [`2108 통계학`](https://www.acmicpc.net/problem/2108) | ![status][DONE]  |
-|  3주차  | [`1427 소트인사이드`](https://www.acmicpc.net/problem/1427)| ![status][DONE]|[`11650 좌표 정렬하기`](https://www.acmicpc.net/problem/11650)| ![status][DONE]  |
-|  3주차  | [`11651 좌표 정렬하기 2`](https://www.acmicpc.net/problem/11651)| ![status][DONE]|[`1181 단어 정렬`](https://www.acmicpc.net/problem/1181)| ![status][DONE]  |
-|                                                                                                                                                           |
-|  4주차  | [`2798 블랙잭`](https://www.acmicpc.net/problem/2798)| ![status][DONE]| [`2231 분해합`](https://www.acmicpc.net/problem/2231)|![status][DONE]|
-|  4주차  | [`7568 덩치`](https://www.acmicpc.net/problem/7568)| ![status][DONE]|  [`1018 체스판 다시 칠하기`](https://www.acmicpc.net/problem/1018)|![status][DONE]|
-|  4주차  | [`1436 영화감독 숌`](https://www.acmicpc.net/problem/1436)| ![status][DONE]|                 |          |
-|                                                                                                                                                           |
-|  5주차  | [`2606 바이러스`](https://www.acmicpc.net/problem/2606)| ![status][DONE]|[`2667 단지번호 붙이기`](https://www.acmicpc.net/problem/2667)| ![status][DONE]|
-|  5주차  | [`7576 토마토`](https://www.acmicpc.net/problem/7576)| ![status][DONE]|[`1697 숨바꼭질`](https://www.acmicpc.net/problem/1697)| ![status][DONE]|
-|  5주차  | [`13549 숨바꼭질3`](https://www.acmicpc.net/problem/13549)| ![status][DONE]|[`2206 벽 부수고 이동하기`](https://www.acmicpc.net/problem/2206)| ![status][DONE]|
-|                                                                                                                                                           |
-|  7주차  | [`1920 수 찾기`](https://www.acmicpc.net/problem/1920)| ![status][DONE]|[`14501 퇴사`](https://www.acmicpc.net/problem/14501)| ![status][DONE]|
-|  7주차  | [`11047 동전0`](https://www.acmicpc.net/problem/11047)| ![status][DONE]|[`15649 N과 M(1)`](https://www.acmicpc.net/problem/15649)| ![status][DONE]|
-|  7주차  | [`11399 ATM`](https://www.acmicpc.net/problem/11399)| ![status][DONE]|[`16964 DFS 스페셜 저지`](https://www.acmicpc.net/problem/16964)| ![status][DONE]|
-|                                                                                                                                                           |
-|  8주차  | [`2615 오목`](https://www.acmicpc.net/problem/2615)| ![status][DOING]|[`1976 여행 가자`](https://www.acmicpc.net/problem/1976)| ![status][DOING]|
-|  8주차  | [`18429 근손실`](https://www.acmicpc.net/problem/18429)| ![status][DOING]|[`1931 회의실 배정`](https://www.acmicpc.net/problem/1931)| ![status][DOING]|
-|  8주차  | [`17478 재귀함수가 뭔가요?`](https://www.acmicpc.net/problem/17478)| ![status][DOING]|[`1654 랜선 자르기`](https://www.acmicpc.net/problem/1654)| ![status][DOING]|
+| 주차  |                                    링크                                    |       상태       |                               링크                                |       상태       |
+| :---: | :------------------------------------------------------------------------: | :--------------: | :---------------------------------------------------------------: | :--------------: |
+| 1주차 |           [`10828 스택`](https://www.acmicpc.net/problem/10828)            | ![status][done]  |    [`9093 단어 뒤집기`](https://www.acmicpc.net/problem/9093)     | ![status][done]  |
+| 1주차 |            [`9012 괄호`](https://www.acmicpc.net/problem/9012)             | ![status][done]  |     [`1874 스택 수열`](https://www.acmicpc.net/problem/1874)      | ![status][done]  |
+| 1주차 |           [`1406 에디터`](https://www.acmicpc.net/problem/1406)            | ![status][done]  |        [`10845 큐`](https://www.acmicpc.net/problem/10845)        | ![status][done]  |
+| 1주차 |        [`1158 요세푸스 문제`](https://www.acmicpc.net/problem/1158)        | ![status][done]  |        [`10866 덱`](https://www.acmicpc.net/problem/10866)        | ![status][done]  |
+|       |
+| 2주차 |       [`17413 단어 뒤집기 2`](https://www.acmicpc.net/problem/17413)       | ![status][done]  |     [`10799 쇠막대기`](https://www.acmicpc.net/problem/10799)     | ![status][done]  |
+| 2주차 |          [`17298 오큰수`](https://www.acmicpc.net/problem/17298)           | ![status][done]  |     [`17299 오등큰수`](https://www.acmicpc.net/problem/17299)     | ![status][done]  |
+| 2주차 |        [`1935 후위 표기식2`](https://www.acmicpc.net/problem/1935)         | ![status][done]  |    [`1918 후위 표기식`](https://www.acmicpc.net/problem/1918)     | ![status][done]  |
+|       |
+| 3주차 |         [`2750 수 정렬하기`](https://www.acmicpc.net/problem/2750)         | ![status][done]  |   [`2751 수 정렬하기 2`](https://www.acmicpc.net/problem/2751)    | ![status][done]  |
+| 3주차 |       [`10989 수 정렬하기 3`](https://www.acmicpc.net/problem/10989)       | ![status][done]  |       [`2108 통계학`](https://www.acmicpc.net/problem/2108)       | ![status][done]  |
+| 3주차 |        [`1427 소트인사이드`](https://www.acmicpc.net/problem/1427)         | ![status][done]  |  [`11650 좌표 정렬하기`](https://www.acmicpc.net/problem/11650)   | ![status][done]  |
+| 3주차 |      [`11651 좌표 정렬하기 2`](https://www.acmicpc.net/problem/11651)      | ![status][done]  |     [`1181 단어 정렬`](https://www.acmicpc.net/problem/1181)      | ![status][done]  |
+|       |
+| 4주차 |           [`2798 블랙잭`](https://www.acmicpc.net/problem/2798)            | ![status][done]  |       [`2231 분해합`](https://www.acmicpc.net/problem/2231)       | ![status][done]  |
+| 4주차 |            [`7568 덩치`](https://www.acmicpc.net/problem/7568)             | ![status][done]  | [`1018 체스판 다시 칠하기`](https://www.acmicpc.net/problem/1018) | ![status][done]  |
+| 4주차 |         [`1436 영화감독 숌`](https://www.acmicpc.net/problem/1436)         | ![status][done]  |                                                                   |                  |
+|       |
+| 5주차 |          [`2606 바이러스`](https://www.acmicpc.net/problem/2606)           | ![status][done]  |  [`2667 단지번호 붙이기`](https://www.acmicpc.net/problem/2667)   | ![status][done]  |
+| 5주차 |           [`7576 토마토`](https://www.acmicpc.net/problem/7576)            | ![status][done]  |      [`1697 숨바꼭질`](https://www.acmicpc.net/problem/1697)      | ![status][done]  |
+| 5주차 |         [`13549 숨바꼭질3`](https://www.acmicpc.net/problem/13549)         | ![status][done]  | [`2206 벽 부수고 이동하기`](https://www.acmicpc.net/problem/2206) | ![status][done]  |
+|       |
+| 7주차 |           [`1920 수 찾기`](https://www.acmicpc.net/problem/1920)           | ![status][done]  |       [`14501 퇴사`](https://www.acmicpc.net/problem/14501)       | ![status][done]  |
+| 7주차 |           [`11047 동전0`](https://www.acmicpc.net/problem/11047)           | ![status][done]  |     [`15649 N과 M(1)`](https://www.acmicpc.net/problem/15649)     | ![status][done]  |
+| 7주차 |            [`11399 ATM`](https://www.acmicpc.net/problem/11399)            | ![status][done]  | [`16964 DFS 스페셜 저지`](https://www.acmicpc.net/problem/16964)  | ![status][done]  |
+|       |
+| 8주차 |            [`2615 오목`](https://www.acmicpc.net/problem/2615)             | ![status][done]  |     [`1976 여행 가자`](https://www.acmicpc.net/problem/1976)      | ![status][done]  |
+| 8주차 |          [`18429 근손실`](https://www.acmicpc.net/problem/18429)           | ![status][done]  |    [`1931 회의실 배정`](https://www.acmicpc.net/problem/1931)     | ![status][done]  |
+| 8주차 |    [`17478 재귀함수가 뭔가요?`](https://www.acmicpc.net/problem/17478)     | ![status][done]  |    [`1654 랜선 자르기`](https://www.acmicpc.net/problem/1654)     | ![status][done]  |
+|       |
+| 9주차 |         [`18430 무기 공학`](https://www.acmicpc.net/problem/18430)         | ![status][doing] |       [`1439 뒤집기`](https://www.acmicpc.net/problem/1439)       | ![status][doing] |
+| 9주차 |          [`5585 거스름돈`](https://www.acmicpc.net/problem/5585)           | ![status][doing] |     [`2178 미로 탐색`](https://www.acmicpc.net/problem/2178)      | ![status][doing] |
+| 9주차 | [`1620 나는야 포켓몬 마스터 이다솜`](https://www.acmicpc.net/problem/1620) | ![status][doing] |                                                                   |                  |
 
-
-
-|   일지  | 내용                                                 |
-|  :--  | :------------------------------------------------- |
-|  21. 01. 14  | Queue, Stack, DFS 이론 정리|
-|  21. 01. 21  | 정렬 이론정리(선택, 삽입, 버블, 퀵, 힙, 합병)|
-|  21. 01. 28  | 21년 카카오 코딩테스트 1문제 풀기|
-|  21. 02. 04  | BFS 이론 정리, BFS 1문제 풀기|
-|  21. 02. 11  | 설날로 인한 개별 공부 + 트리 관련 알고리즘 정리 및 발표 과제|
-|  21. 02. 18  | 트리 관련 알고리즘 발표|
-|  21. 02. 25  | 프로그래머스 스킬체크 1, 2|
+| 일지       | 내용                                                         |
+| :--------- | :----------------------------------------------------------- |
+| 21. 01. 14 | Queue, Stack, DFS 이론 정리                                  |
+| 21. 01. 21 | 정렬 이론정리(선택, 삽입, 버블, 퀵, 힙, 합병)                |
+| 21. 01. 28 | 21년 카카오 코딩테스트 1문제 풀기                            |
+| 21. 02. 04 | BFS 이론 정리, BFS 1문제 풀기                                |
+| 21. 02. 11 | 설날로 인한 개별 공부 + 트리 관련 알고리즘 정리 및 발표 과제 |
+| 21. 02. 18 | 트리 관련 알고리즘 발표                                      |
+| 21. 02. 25 | 프로그래머스 스킬체크 1, 2                                   |
+| 21. 03. 04 | 프로그래머스 최댓값과 최솟값 1문제                           |
 
 ## Reference
 
-* 참고는 ❗️절대로 풀지 못할 것❗️ 같을 때 참고하세요. 주로 스터디 하는 사람들과의 ❗️소통❗️을 하고❗️보지 않길 권장❗️합니다.
-* 문제 풀다가 생각하다가 절대로 풀지 못할 것 같으면 같이 스터디하는 사람의 코드를 참고하세요.
+- 참고는 ❗️절대로 풀지 못할 것❗️ 같을 때 참고하세요. 주로 스터디 하는 사람들과의 ❗️소통❗️을 하고❗️보지 않길 권장❗️합니다.
+- 문제 풀다가 생각하다가 절대로 풀지 못할 것 같으면 같이 스터디하는 사람의 코드를 참고하세요.
 
-|  이름  | 바로가기         |
-|:-----:|:--------------:|
-|윤건일   | [바로가기][Geonil] |
-|박형민   | [바로가기][Hyeongmin] |
-|김경윤   | [바로가기][KyeongYoon] |
-|전세현   | [바로가기][SaeHyeon] |
-|김승환   | [바로가기][Seunghwan] |
-|한성민   | [바로가기][Sungmin] |
-|남태우   | [바로가기][Taewoo] |
-|이한나   | [바로가기][Hanna] |
+|  이름  |        바로가기        |
+| :----: | :--------------------: |
+| 윤건일 |   [바로가기][geonil]   |
+| 박형민 | [바로가기][hyeongmin]  |
+| 김경윤 | [바로가기][kyeongyoon] |
+| 전세현 |  [바로가기][saehyeon]  |
+| 김승환 | [바로가기][seunghwan]  |
+| 한성민 |  [바로가기][sungmin]   |
+| 남태우 |   [바로가기][taewoo]   |
+| 이한나 |   [바로가기][hanna]    |
 
-
-[TODO]: https://img.shields.io/badge/-TODO-DFFD26
-[DOING]: https://img.shields.io/badge/-DOING-31AE0F
-[DONE]: https://img.shields.io/badge/-DONE-0885CC
-[Geonil]: ./Geonil
-[Hyeongmin]: ./Hyeongmin
-[KyeongYoon]: ./KyeongYoon
-[SaeHyeon]: ./SaeHyeon
-[Seunghwan]: ./Seunghwan
-[Sungmin]: ./Sungmin
-[Taewoo]: ./Taewoo
-[Hanna]: ./Hanna
+[todo]: https://img.shields.io/badge/-TODO-DFFD26
+[doing]: https://img.shields.io/badge/-DOING-31AE0F
+[done]: https://img.shields.io/badge/-DONE-0885CC
+[geonil]: ./Geonil
+[hyeongmin]: ./Hyeongmin
+[kyeongyoon]: ./KyeongYoon
+[saehyeon]: ./SaeHyeon
+[seunghwan]: ./Seunghwan
+[sungmin]: ./Sungmin
+[taewoo]: ./Taewoo
+[hanna]: ./Hanna
