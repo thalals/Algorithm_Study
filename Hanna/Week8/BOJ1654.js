@@ -24,9 +24,34 @@ let needLan = lan[1];
 let i = 0;
 let lanLangth = [];
 
-while(i<haveLan){
-    lanLangth[i++] = input().split('\n').map(Number);
+while(i<haveLan)
+{
+  lanLangth[i++] = input().split('\n').map(Number);
 }
 
-console.log(haveLan,needLan,lanLangth);
+let start = 1;
+let end = Math.max.apply(null,lanLangth);
+
+
+//이분탐색
+while(start <= end) {
+  let mid = Math.floor((start + end)/2);
+  let makeLan = 0;
+
+  for(i=0;i<haveLan;i++)
+  {
+    makeLan += Math.floor(lanLangth[i]/mid);
+  }
+
+  if(makeLan >= needLan)
+  {
+    start = mid + 1;
+  }
+  else
+  {
+    end = mid - 1;
+  }
+}
+
+console.log(Math.floor(end));
 
