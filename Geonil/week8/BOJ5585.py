@@ -14,7 +14,6 @@ def main():
         n = change // coin
         cnt += n
         change -= n*coin
-        print(coin, n, change)
 
     print(cnt)
 
