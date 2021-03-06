@@ -1,5 +1,7 @@
 const fs = require('fs');
 const { format } = require('path');
+//근손실
+
 const stdin = (process.platform === 'linux'
   ? fs.readFileSync('/dev/stdin').toString()
   : `3 4

@@ -27,12 +27,7 @@ void Acycle(int n) {
 }
 
 void recursion(int n) {
-    if (n == 1) {
-        printf("\"재귀함수가 뭔가요?\"\n");
-        printf("\"재귀함수는 자기 자신을 호출하는 함수라네\"\n");
-        printf("라고 답변하였지.\n");
-    }
-    if (n > 1 && n <= 50) {
+    if (n >= 1 && n <= 50) {
         for (int i = 0; i < n; i++) {
             Qcycle(i);
         }
