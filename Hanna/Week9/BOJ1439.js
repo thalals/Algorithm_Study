@@ -13,16 +13,46 @@ const input = (() => {
 })();
 
 let s = input();
-
-console.log(s);
+let zeroToOne = 0;
+let oneToZero = 0;
+// log(s);
 
 //모두 0으로 바꿀 경우
 
-for(let i=s.indexOf(1,0);i<s.length;i++)
+// log(s.indexOf(1,0));
+
+//1을 0으로로 바꿀때
+for(let i=0;i<s.length;i++)
 {
-    
+  let lastOne;
+
+    while(s[i] === '1')
+    {
+      i++;
+      lastOne = i;
+    }
+    if(s[lastOne + 1] === '0')
+    {
+      oneToZero += 1;
+    }
 }
 
+//0을 1로 바꿀때
+// for(i=0;i<s.length;i++)
+// {
+//   let lastZero;
 
+//     while(s[i] === '0')
+//     {
+//       i++;
+//       lastZero = i;
+//     }
 
-//모두 1로 바꿀 경우
+//     if(s[lastZero + 1] === '1')
+//     {
+//       zeroToOne += 1;
+//       log(zeroToOne);
+//     }
+// }
+
+log(oneToZero);
