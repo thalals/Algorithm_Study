@@ -1,15 +1,4 @@
-# 2021 상반기 Algorithm_Study
-
-## 목차
-
-```
-1. [Intro](#Intro)
-2. [Member](#Member)
-3. [Commit](#Commit)
-4. [Problem](#Problem)
-5. [Reference](#Reference)
-```
----
+# 알고리즘 마스터 도전하기
 
 ## Intro
 
