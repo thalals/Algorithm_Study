@@ -96,19 +96,19 @@
 
 ## Commit
 
-1. **문제 풀이 맞춘 경우**
+```
+1. 문제 해결
+    git commit -m "[ADD] BOJ1234(해결)"
 
-- git commit -m "[ADD] BOJ1004\_해결"
+2. 문제 막힘. 진행 중인 것
+    git commit -m "[UPD] BOJ1234(진행)"
 
-2. **문제 풀이 진행중, 수정, 막힌 상황**
-
-- git commit -m "[UPD] BOJ1004\_진행중(막힘)"
-- ()에 들어갈 것은 자신의 현재 상태를 표시해주면 될 것같습니다.
-- 예) (막힘), (수정), (런타임에러), (문제이해중) ...
-
-3. **잘못 등록한 상황**
-
-- git commit -m "[DEL] BOJ1004\_삭제"
+3. 문제 수정
+    git commit -m "[UPD] BOJ1234(수정)"
+    
+4. 문제 삭제
+    git commit -m "[DEL] BOJ1234(삭제)"
+```
 
 ## Problem
 
