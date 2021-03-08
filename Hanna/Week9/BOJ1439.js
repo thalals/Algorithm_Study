@@ -1,6 +1,8 @@
 const { log } = require('console');
 const fs = require('fs');
+const { endianness } = require('os');
 const { format } = require('path');
+const { start } = require('repl');
 const stdin = (process.platform === 'linux'
   ? fs.readFileSync('/dev/stdin').toString()
   : `0001100
@@ -13,46 +15,31 @@ const input = (() => {
 })();
 
 let s = input();
-let zeroToOne = 0;
-let oneToZero = 0;
-// log(s);
+let zero = 0;
+let one = 0;
 
-//모두 0으로 바꿀 경우
-
-// log(s.indexOf(1,0));
-
-//1을 0으로로 바꿀때
-for(let i=0;i<s.length;i++)
+if(s[0] === '0')
 {
-  let lastOne;
-
-    while(s[i] === '1')
-    {
-      i++;
-      lastOne = i;
-    }
-    if(s[lastOne + 1] === '0')
-    {
-      oneToZero += 1;
-    }
+  zero++;
+}
+else
+{
+  one++;
 }
 
-//0을 1로 바꿀때
-// for(i=0;i<s.length;i++)
-// {
-//   let lastZero;
+for(let i=1; i<s.length; i++)
+{
+  if(s[i]!=s[i-1])
+  {
+    if(s[i] === '0')
+    {
+      zero++;
+    }
+    else
+    {
+      one++;
+    }
+  }
+}
 
-//     while(s[i] === '0')
-//     {
-//       i++;
-//       lastZero = i;
-//     }
-
-//     if(s[lastZero + 1] === '1')
-//     {
-//       zeroToOne += 1;
-//       log(zeroToOne);
-//     }
-// }
-
-log(oneToZero);
+log(zero < one ? zero : one);
