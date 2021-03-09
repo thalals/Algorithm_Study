@@ -57,23 +57,22 @@ while(i < N)
     i++;
 }
 
-// 25
-// Raichu
-// 3
-// Pidgey
-// Kakuna
+//poketmon Array -> Object 변환
+let mapPoketmon = Object.entries(Object.assign({}, poketmon));
+
+log(mapPoketmon);
 
 for(let j=0; j<M; j++)
 {
     let question = input();
 
-    //log(typeof(question));
-
+    //문자일 경우
     if(isNaN(question) === true)
     {
-        log(poketmon.indexOf(question,0)+1);
+        log(mapPoketmon.get(question));
     }
 
+    //숫자일 경우
     if(isNaN(question) === false)
     {
         log(poketmon[(question*1)-1]);
