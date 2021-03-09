@@ -165,6 +165,10 @@
 | 남태우 |   [바로가기][taewoo]   |
 | 이한나 |   [바로가기][hanna]    |
 
+|  남태우  |  박형민  |  한성민  |  김경윤  |  전세현  |  윤건일  |  김승환  |  이한나  |
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
+|  [바로가기][taewoo]  |  [바로가기][hyeongmin]  |  [바로가기][sungmin]  |  [바로가기][kyeongyoon]  |  [바로가기][saehyeon]  |  [바로가기][geonil]  |  [바로가기][seunghwan]  |  [바로가기][hanna]  |
+
 [todo]: https://img.shields.io/badge/-TODO-DFFD26
 [doing]: https://img.shields.io/badge/-DOING-31AE0F
 [done]: https://img.shields.io/badge/-DONE-0885CC
