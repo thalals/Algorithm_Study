@@ -5,7 +5,7 @@ In = sys.stdin.readline
 
 n, m = map(int, In().split())
 wood = []
-for _ in range(m):
+for _ in range(n):
     sub = list(map(int, In().split()))
     wood.append(sub)
 
@@ -39,8 +39,8 @@ def check_pos(x, y, visited):
     return pos_flag
 
 
-def sum_strength(x, y, f, new_visited):
-    # new_visited = copy.deepcopy(visited)
+def sum_strength(x, y, f, visited):
+    new_visited = copy.deepcopy(visited)
     st = wood[x][y]*2
     new_visited[x][y] = 1
     for dx, dy in flag[f]:
@@ -50,17 +50,25 @@ def sum_strength(x, y, f, new_visited):
     return st, new_visited
 
 
-def solve(visited, strength):
+def solve(x, y, visited, strength):
     global answer
-    for i in range(n):
-        for j in range(m):
-            checking = check_pos(i, j, visited)
-            for c in checking:
-                new_strength, new_visited = sum_strength(i, j, c, visited)
-                new_strength += strength
-                answer = max(answer, new_strength)
-                print(answer)
-                solve(new_visited, new_strength)
+
+    if x == n:
+        x = 0
+        y += 1
+
+    if y == m:
+        answer = max(answer, strength)
+        return
+
+    if not visited[x][y]:
+        checking = check_pos(x, y, visited)
+        for c in checking:
+            new_strength, new_visited = sum_strength(x, y, c, visited)
+            new_strength += strength
+            solve(x+1, y, new_visited, new_strength)
+
+    solve(x+1, y, visited, strength)
 
 
 def main():
@@ -70,7 +78,7 @@ def main():
     if n == 1 or m == 1:
         print(0)
     else:
-        solve(visited, 0)
+        solve(0, 0, visited, 0)
         print(answer)
 
 
