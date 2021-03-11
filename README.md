@@ -134,9 +134,11 @@
 | 8주차 |          [`18429 근손실`](https://www.acmicpc.net/problem/18429)           | ![status][done]  |    [`1931 회의실 배정`](https://www.acmicpc.net/problem/1931)     | ![status][done]  |
 | 8주차 |    [`17478 재귀함수가 뭔가요?`](https://www.acmicpc.net/problem/17478)     | ![status][done]  |    [`1654 랜선 자르기`](https://www.acmicpc.net/problem/1654)     | ![status][done]  |
 |       |
-| 9주차 |         [`18430 무기 공학`](https://www.acmicpc.net/problem/18430)         | ![status][doing] |       [`1439 뒤집기`](https://www.acmicpc.net/problem/1439)       | ![status][doing] |
-| 9주차 |          [`5585 거스름돈`](https://www.acmicpc.net/problem/5585)           | ![status][doing] |     [`2178 미로 탐색`](https://www.acmicpc.net/problem/2178)      | ![status][doing] |
-| 9주차 | [`1620 나는야 포켓몬 마스터 이다솜`](https://www.acmicpc.net/problem/1620) | ![status][doing] |                                                                   |                  |
+| 9주차 |         [`18430 무기 공학`](https://www.acmicpc.net/problem/18430)         | ![status][done] |       [`1439 뒤집기`](https://www.acmicpc.net/problem/1439)       | ![status][done] |
+| 9주차 |          [`5585 거스름돈`](https://www.acmicpc.net/problem/5585)           | ![status][done] |     [`2178 미로 탐색`](https://www.acmicpc.net/problem/2178)      | ![status][done] |
+| 9주차 | [`1620 나는야 포켓몬 마스터 이다솜`](https://www.acmicpc.net/problem/1620) | ![status][done] |                                                                   |                  |
+|       |
+| 10주차 |            [`1753 오목`](https://www.acmicpc.net/problem/1753)             | ![status][doing]  |     [`14496 그대, 그머가 되어`](https://www.acmicpc.net/problem/14496)      | ![status][doing]  |
 
 | 일지       | 내용                                                         |
 | :--------- | :----------------------------------------------------------- |
