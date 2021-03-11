@@ -4,7 +4,7 @@ const { log } = require('console');
 const fs = require('fs');
 const { format } = require('path');
 const stdin = (process.platform === 'linux'
-  ? fs.readFileSync('/devg/stdin').toString()
+  ? fs.readFileSync('/dev/stdin').toString()
   : `380
 `
 ).split('\n');
