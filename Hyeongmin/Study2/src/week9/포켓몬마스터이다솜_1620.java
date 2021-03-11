@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 
 
 class poketmon implements Comparable<poketmon>{
@@ -49,10 +50,14 @@ public class 포켓몬마스터이다솜_1620 {
 		int b= Integer.parseInt(temp[1]);
 		
 		poketmon dict[] = new poketmon[a+1];
+		HashMap<String, Integer> list = new HashMap<String, Integer>();
 		
-		for(int i=1;i<=a;i++) {
-			poketmon p = new poketmon(i,br.readLine());
+ 		for(int i=1;i<=a;i++) {
+ 			String name = br.readLine();
+			poketmon p = new poketmon(i,name);
 			dict[i] = p;
+			
+			list.put(name,i );
 		}
 		
 		ArrayList<poketmon> sort_dict =new ArrayList<poketmon>();
@@ -62,7 +67,7 @@ public class 포켓몬마스터이다솜_1620 {
 //			sort_dict[i] = dict[i];
 //		}
 		
-		Collections.sort(sort_dict);
+//		Collections.sort(sort_dict);
 		
 		for(int i=0;i<b;i++) {
 			String s =br.readLine();
@@ -73,7 +78,7 @@ public class 포켓몬마스터이다솜_1620 {
 				bw.append(dict[number].name+"\n");
 			}
 			else {
-				bw.append(binary_search(0, sort_dict.size(), sort_dict, s)+"\n");
+				bw.append(list.get(s)+"\n");
 				
 			}
 			
