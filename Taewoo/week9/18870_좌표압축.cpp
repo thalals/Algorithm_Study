@@ -4,10 +4,29 @@
 using namespace std;
 
 int arr[1000001];
-int main() {
-    int N; cin >> N;
-    vector<int> vec(N);
+vector<int> vec;
+int binary(int left, int right, int key, vector<int> &vec) {
+    // int left = 0;
+    // int right = vec.size() - 1;
+    while(left < right) {
+        int mid = (left + right) / 2;
+        if(vec[mid] < key){
+            left = mid + 1;
+        }
+        else {
+            right = mid;
+        }
+    }
+    return (left + right) / 2;
+}
 
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int N; cin >> N;
+    
+    vec.resize(N);
     for(int i = 0; i < N; i++) {
         cin >> arr[i];
         vec[i] = arr[i];    
@@ -16,7 +35,7 @@ int main() {
     vec.erase(unique(vec.begin(), vec.end()), vec.end());
 
     for(int i = 0; i < N; i++) {
-        int answer = lower_bound(vec.begin(), vec.end(), arr[i]) - vec.begin();
-        cout << answer << ' ';
+        int ret = binary(0, vec.size() - 1, arr[i], vec);
+        cout << ret << ' ';
     }
 }
