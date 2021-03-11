@@ -4,14 +4,8 @@ input=sys.stdin.readline
 
 n=int(input())
 li=list(map(int,input().split()))
-result=[]
 exp=list(set(li))
 exp.sort()
-d={}
 
-for i in range(len(exp)):
-    d[exp[i]]=i
-
-for i in li:
-    print(d[i],end=" ")
-
+for i in range(n):
+    print(bisect_left(exp,li[i]),end= ' ')
