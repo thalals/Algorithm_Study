@@ -12,7 +12,7 @@
 <table>
     <tr>
         <td align="center" width="130px" height="160px">
-            <a href="https://github.com/ap4o"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/66770613?s=460&u=282042bf415e9b361e2b804c554389593b2ff760&v=4" /></a>
+            <a href="https://github.com/ap4o"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/66770613?s=460&u=fe16d6fa3d8839c4e6beb6fec9e83811041cdaa1&v=4" /></a>
             <br />
             <a href="https://github.com/bn-tw2020">남태우</a>
         </td>
@@ -154,16 +154,9 @@
 - 참고는 ❗️절대로 풀지 못할 것❗️ 같을 때 참고하세요. 주로 스터디 하는 사람들과의 ❗️소통❗️을 하고❗️보지 않길 권장❗️합니다.
 - 문제 풀다가 생각하다가 절대로 풀지 못할 것 같으면 같이 스터디하는 사람의 코드를 참고하세요.
 
-|  이름  |        바로가기        |
-| :----: | :--------------------: |
-| 윤건일 |   [바로가기][geonil]   |
-| 박형민 | [바로가기][hyeongmin]  |
-| 김경윤 | [바로가기][kyeongyoon] |
-| 전세현 |  [바로가기][saehyeon]  |
-| 김승환 | [바로가기][seunghwan]  |
-| 한성민 |  [바로가기][sungmin]   |
-| 남태우 |   [바로가기][taewoo]   |
-| 이한나 |   [바로가기][hanna]    |
+|  남태우  |  박형민  |  한성민  |  김경윤  |  전세현  |  윤건일  |  김승환  |  이한나  |
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
+|  [바로가기][taewoo]  |  [바로가기][hyeongmin]  |  [바로가기][sungmin]  |  [바로가기][kyeongyoon]  |  [바로가기][saehyeon]  |  [바로가기][geonil]  |  [바로가기][seunghwan]  |  [바로가기][hanna]  |
 
 [todo]: https://img.shields.io/badge/-TODO-DFFD26
 [doing]: https://img.shields.io/badge/-DOING-31AE0F
