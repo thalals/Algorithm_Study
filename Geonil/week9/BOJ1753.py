@@ -1,6 +1,5 @@
 import sys
 import heapq
-from collections import defaultdict
 In = sys.stdin.readline
 
 num_v, num_e = map(int, In().split())
