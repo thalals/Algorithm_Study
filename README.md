@@ -145,14 +145,8 @@
 <details>
 <summary>21. 01. 14</summary>
 <div markdown="1">       
-Queue, Stack, DFS 이론 정리
+* Queue, Stack, DFS 이론 정리
 </div>
-    
-<summary>21. 01. 21</summary>
-<div markdown="1">       
-정렬 이론정리(선택, 삽입, 버블, 퀵, 힙, 합병)
-</div>
-
 </details>
 
 | 일지       | 내용                                                         |
