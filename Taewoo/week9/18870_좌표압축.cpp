@@ -6,8 +6,6 @@ using namespace std;
 int arr[1000001];
 vector<int> vec;
 int binary(int left, int right, int key, vector<int> &vec) {
-    // int left = 0;
-    // int right = vec.size() - 1;
     while(left < right) {
         int mid = (left + right) / 2;
         if(vec[mid] < key){
