@@ -1,3 +1,10 @@
+/*
+Comment : 우선순위 큐 default는 최대힙
+          구조체로 할 땐 operator 지정 잘하자..
+          아니면 priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int,int>>> pq로 ....
+          priority_queue<pair<int,int>> 로 하면 default가 최대힙이라 less로 설정된다..
+          다익스트라는 최단거리를 뽑을 때 거리가 가장 짧은 것을 뽑아야 하기에 최소힙으로 바꾸자..
+*/
 #include <bits/stdc++.h>
 using namespace std;
 

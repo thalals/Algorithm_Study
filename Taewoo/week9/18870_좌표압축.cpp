@@ -1,3 +1,9 @@
+/*
+Comment : lower_bound로 했을 땐 바로 답이 나왔으나
+          이진 탐색을 직접 구현했는데 파라미터를 주소값 참고가 아니고
+          직접 vector<int> vec로 날려버려서 시간이 너무 오래 걸려 시간초과가 발생함..
+*/
+
 #include<iostream>
 #include<algorithm>
 #include<vector>
