@@ -143,12 +143,94 @@
 ## 스크럼
 
 <details>
-<summary>21. 01. 14</summary>
-<div markdown="1">       
-* Queue, Stack, DFS 이론 정리
-</div>
+    <summary>21. 01. 14</summary>
+    <div markdown="1">       
+    <ul>
+        <li>Queue, Stack, DFS 이론 정리</li>
+    </ul>
+    </div>
 </details>
 
+<details>
+    <summary>21. 01. 21</summary>
+    <div markdown="1">       
+    <ul>
+        <li>선택 정렬 정리</li>
+        <li>삽입 정렬 정리</li>
+        <li>버블 정렬 정리</li>
+        <li>퀵 정렬 정리</li>
+        <li>힙 정렬 정리</li>
+        <li>합병 정렬 정리</li>
+    </ul>
+    </div>
+</details>
+
+
+<details>
+    <summary>21. 01. 28</summary>
+    <div markdown="1">       
+    <ul>
+        <li>21년 카카오 코딩테스트 1문제 풀기</li>
+    </ul>
+    </div>
+</details>
+
+<details>
+    <summary>21. 02. 04</summary>
+    <div markdown="1">       
+    <ul>
+        <li>BFS 이론 정리</li>
+        <li>BFS 기초 1문제 풀기</li>
+    </ul>
+    </div>
+</details>
+
+<details>
+    <summary>21. 02. 11</summary>
+    <div markdown="1">       
+    <ul>
+        <li>설날로 인한 개별 공부</li>
+        <li>트리 관련 알고리즘 정리 및 발표 과제</li>
+    </ul>
+    </div>
+</details>
+
+<details>
+    <summary>21. 02. 18</summary>
+    <div markdown="1">       
+    <ul>
+        <li>트리 관련 알고리즘 발표</li>
+    </ul>
+    </div>
+</details>
+
+<details>
+    <summary>21. 02. 25</summary>
+    <div markdown="1">       
+    <ul>
+        <li>프로그래머스 스킬체크 Lv1</li>
+        <li>프로그래머스 스킬체크 Lv2</li>
+    </ul>
+    </div>
+</details>
+
+<details>
+    <summary>21. 03. 04</summary>
+    <div markdown="1">       
+    <ul>
+        <li>Programmers 최댓값과 최솟값 문제 풀기</li>
+    </ul>
+    </div>
+</details>
+
+<details>
+    <summary>21. 03. 11</summary>
+    <div markdown="1">       
+    <ul>
+        <li>BOJ 좌표 압축 문제</li>
+    </ul>
+    </div>
+</details>
 | 일지       | 내용                                                         |
 | :--------- | :----------------------------------------------------------- |
 | 21. 01. 14 | Queue, Stack, DFS 이론 정리                                  |
