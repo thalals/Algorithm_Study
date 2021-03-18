@@ -14,4 +14,3 @@ for i in range(len(exp)):
 
 for i in li:
     print(d[i],end=" ")
-

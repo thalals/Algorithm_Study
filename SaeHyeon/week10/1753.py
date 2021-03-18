@@ -38,7 +38,7 @@ for i in range(e):
         di[u][v] = min(di[u][v],w)
     else:
         di[u][v] = w
-print(di)
+#print(di)
 dist=Dijkstra(di,k)
 
 for i in dist[1:]:
