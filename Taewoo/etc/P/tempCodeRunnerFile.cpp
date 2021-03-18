@@ -1,0 +1,2 @@
+
+    cin.tie(NULL);
