@@ -60,15 +60,17 @@ void move_fish() {
                 fish[i].x = nx;
                 fish[i].y = ny;
                 _map[nx][ny] = i;
-                _map[nx][ny] = 0;           
+                _map[x][y] = 0;       
            }
            else if(_map[nx][ny] != -1) { // 다른 물고기인경우
                 flag = true;
                 int idx = _map[nx][ny];
-                Fish tmp = fish[idx];
+                Fish temp = fish[idx];
                 fish[idx].x = fish[i].x;
                 fish[idx].y = fish[i].y;
-                fish[i] = tmp;
+                fish[i].x = temp.x;
+                fish[i].y = temp.y;
+
                 swap(_map[nx][ny], _map[x][y]);
            }
        }
@@ -88,15 +90,16 @@ void move_fish() {
                         fish[i].y = ny;
                         fish[i].dir = ddir;
                         _map[nx][ny] = i;
-                        _map[nx][ny] = 0;
+                        _map[x][y] = 0;
                         break;         
                     }
                     else if(_map[nx][ny] != -1) { // 다른 물고기인경우
                         int idx = _map[nx][ny];
-                        Fish tmp = fish[idx];
+                        Fish temp = fish[idx];
                         fish[idx].x = fish[i].x;
                         fish[idx].y = fish[i].y;
-                        fish[i] = tmp;
+                        fish[i].x = temp.x;
+                        fish[i].y = temp.y;
                         swap(_map[nx][ny], _map[x][y]);
                         fish[i].dir = ddir;
                         break;
@@ -108,21 +111,13 @@ void move_fish() {
                 ny = y + dy[ddir];
             }
         }
-
-        cout << '\n';
-        for(int i = 0; i < 4; i++) {
-            for(int j = 0; j < 4; j++) {
-                cout << _map[i][j] << ' ';
-            }
-            cout << '\n';
-        }
-        cout << '\n';
     }
 }
 
 void dfs(int x, int y, int dir, int values) {
 
     answer = max(answer, values);
+    // cout << "answer : " << answer << '\n';
     int cmap[4][4];
     Fish cfish[17];
     copy_map(cmap, _map, cfish, fish);
@@ -136,9 +131,20 @@ void dfs(int x, int y, int dir, int values) {
         int ny = y + dy[dir] * i;
 
         if(nx >= 0 && nx < 4 && ny >= 0 && ny < 4) {
-            
+            if(_map[nx][ny] == 0) continue;
+
+            int fish_num = _map[nx][ny];
+            fish[fish_num].live = 0;
+            _map[nx][ny] = -1;
+            _map[x][y] = 0;
+            dfs(nx, ny, fish[fish_num].dir, values + fish_num);
+            _map[nx][ny] = fish_num;
+            _map[x][y] = -1;
+            fish[fish_num].live = 1;
         }
+        else break;
     }
+    copy_map(_map, cmap, fish, cfish);
 }
 
 void pro() {
@@ -147,7 +153,7 @@ void pro() {
     fish[f].live = 0;
     _map[0][0] = -1; // 상어의 위치는 -1
     // 상어의 현좌표, 상어가 움직일 방향, 현재 최대 값
-    dfs(0, 0, dir, 0);
+    dfs(0, 0, dir, f);
 
     cout << answer;
 }
@@ -155,15 +161,8 @@ void pro() {
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL); cout.tie(NULL);
-    input();
 
-    for(int i = 0; i < 4; i++) {
-        for(int j = 0; j < 4; j++) {
-            cout << _map[i][j] << ' ';
-        }
-        cout << '\n';
-    }
-    cout << '\n';
+    input();
     pro();
     return 0;
 }

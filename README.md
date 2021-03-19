@@ -138,7 +138,10 @@
 | 9주차 |          [`5585 거스름돈`](https://www.acmicpc.net/problem/5585)           | ![status][done] |     [`2178 미로 탐색`](https://www.acmicpc.net/problem/2178)      | ![status][done] |
 | 9주차 | [`1620 나는야 포켓몬 마스터 이다솜`](https://www.acmicpc.net/problem/1620) | ![status][done] |                                                                   |                  |
 |       |
-| 10주차 |            [`1753 최단 경로`](https://www.acmicpc.net/problem/1753)             | ![status][doing]  |     [`14496 그대, 그머가 되어`](https://www.acmicpc.net/problem/14496)      | ![status][doing]  |
+| 10주차 |            [`1753 최단 경로`](https://www.acmicpc.net/problem/1753)             | ![status][done]  |     [`14496 그대, 그머가 되어`](https://www.acmicpc.net/problem/14496)      | ![status][done]  |
+|       |
+| 11주차 |            [`17135 캐슬 디펜스`](https://www.acmicpc.net/problem/17135)             | ![status][doing]  |     [`1590 캠프가는 영식`](https://www.acmicpc.net/problem/1590)      | ![status][doing]  |
+
 
 ## 스크럼
 
@@ -228,6 +231,15 @@
     <div markdown="1">       
     <ul>
         <li>BOJ 좌표 압축 문제</li>
+    </ul>
+    </div>
+</details>
+
+<details>
+    <summary>21. 03. 18</summary>
+    <div markdown="1">       
+    <ul>
+        <li>BOJ19236(청소년상어) 풀기</li>
     </ul>
     </div>
 </details>
