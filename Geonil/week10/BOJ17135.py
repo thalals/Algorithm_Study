@@ -1,7 +1,7 @@
 # 캐슬 디펜스
 import sys
 import copy
-from itertools import permutations
+from itertools import combinations
 In = sys.stdin.readline
 
 
@@ -17,70 +17,76 @@ def get_archers(cols, n):
     return archers
 
 
-def check_over(grid):
-    for rows in grid:
-        if 1 in rows:
-            return False
-
-    return True
-
-
-def turn_archer(grid, archers, max_distance, n, m):
+def turn_archer(enemy, archers, max_dist):
+    new_enemy = []
     kills = []
+
     for archer in archers:
         distance = 100
-        kill = False
+        exist = False
+        kill = None
 
-        for j in range(m):
-            for i in range(n):
-                if grid[i][j] == 1:
-                    dist = get_distance(archer, [i, j])
+        for idx, e in enumerate(enemy):
+            dist = get_distance(archer, e)
 
-                    if dist < distance and dist <= max_distance:
+            if dist <= distance and dist <= max_dist:
+                if dist == distance:
+                    if enemy[kill][1] > enemy[idx][1]:
                         distance = dist
-                        kill = [i, j]
-        if kill:
+                        kill = idx
+                else:
+                    distance = dist
+                    kill = idx
+                    exist = True
+
+        if exist:
             if kill not in kills:
                 kills.append(kill)
 
-    for kill in kills:
-        x, y = kill
-        grid[x][y] = 0
+    for idx, e in enumerate(enemy):
+        if idx in kills:
+            continue
+        new_enemy.append(e)
 
-    return len(kills)
+    return new_enemy, len(kills)
 
 
-def turn_enemy(grid, n, m):
-    for i in range(n-1, -1, -1):
-        for j in range(m):
-            if i == n-1:
-                if grid[i][j] == 1:
-                    grid[i][j] = 0
-            else:
-                if grid[i][j] == 1:
-                    grid[i][j] = 0
-                    grid[i+1][j] = 1
+def turn_enenmy(enemy, n):
+    new_enemy = []
+    for i in range(len(enemy)):
+        if enemy[i][0] == n-1:
+            continue
+        else:
+            x, y = enemy[i]
+            new_enemy.append([x+1, y])
+
+    return new_enemy
 
 
 def main():
     n, m, max_distance = map(int, In().split())
-    grid = []
+    enemy = []
     max_kill = 0
 
-    per = list(permutations(range(m), 3))
+    per = list(combinations(range(m), 3))
 
-    for _ in range(n):
+    for i in range(n):
         sub = list(map(int, In().split()))
-        grid.append(sub)
+        for j, item in enumerate(sub):
+            if item == 1:
+                enemy.append([i, j])
+    enemy = sorted(enemy, key=lambda x: (-x[0], x[1]))
 
     for position in per:
         archers = get_archers(position, n)
-        game_grid = copy.deepcopy(grid)
+        game_enemy = copy.deepcopy(enemy)
         kill = 0
 
-        while not check_over(game_grid):
-            kill += turn_archer(game_grid, archers, max_distance, n, m)
-            turn_enemy(game_grid, n, m)
+        while game_enemy:
+            game_enemy, kill_num = turn_archer(
+                game_enemy, archers, max_distance)
+            game_enemy = turn_enenmy(game_enemy, n)
+            kill += kill_num
 
         max_kill = max(max_kill, kill)
 
