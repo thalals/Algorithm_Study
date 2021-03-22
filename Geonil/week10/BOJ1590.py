@@ -5,8 +5,6 @@ In = sys.stdin.readline
 
 def main():
     n, t = map(int, In().split())
-    buses = []
-
     ans = float('inf')
 
     for _ in range(n):
