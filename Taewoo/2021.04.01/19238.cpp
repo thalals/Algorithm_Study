@@ -52,7 +52,7 @@ void input() {
         int x, y, d_x, d_y; cin >> x >> y >> d_x >> d_y;
         --x, --y, --d_x, --d_y;
         person.push_back({x, y, d_x, d_y});
-        _map[x][y] = i + 2;
+        _map[x][y] = i + 2; // 사람번호는 2부터~~
     }
 }
 
