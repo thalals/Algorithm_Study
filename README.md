@@ -7,83 +7,6 @@
 2. 정기 모임 : 매주 목요일 오후 6시
 ```
 
-## Member
-
-<table>
-    <tr>
-        <td align="center" width="130px" height="160px">
-            <a href="https://github.com/ap4o"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/66770613?s=460&u=fe16d6fa3d8839c4e6beb6fec9e83811041cdaa1&v=4" /></a>
-            <br />
-            <a href="https://github.com/bn-tw2020">남태우</a>
-        </td>
-        <td>
-            <a href="https://solved.ac/ap4o"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=ap4o" /></a>
-        </td>
-        <td align="center" width="130px" height="160px">
-            <a href="https://github.com/thalals"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/42319300?s=460&u=feb753590ea1a1d094b08573bb11f15e801e63cc&v=4" /></a>
-            <br />
-            <a href="https://github.com/thalals">박형민</a>
-        </td>
-        <td>
-            <a href="https://solved.ac/thalals"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=thalals" /></a>
-        </td>
-    </tr>
-    <tr>
-        <td align="center" width="130px" height="160px">
-            <a href="https://github.com/seunghw"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/70190106?s=460&v=4" /></a>
-            <br />
-            <a href="https://github.com/seunghw">김승환</a>
-        </td>
-        <td>
-            <a href="https://solved.ac/sjn6020"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=sjn6020" /></a>
-        </td>        
-        <td align="center" width="130px" height="160px">
-            <a href="https://github.com/thalals"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/53989855?s=460&u=b9eb39f346a7e519bd50ffc3481872821f2f28dd&v=4" /></a>
-            <br />
-            <a href="https://github.com/thalals">한성민</a>
-        </td>
-        <td>
-            <a href="https://solved.ac/songmin9813"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=songmin9813" /></a>
-        </td>
-    </tr>
-    <tr>
-        <td align="center" width="130px" height="160px">
-            <a href="https://github.com/NASA-GukJang"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/39180786?s=460&u=4d9b554cd7ef1e67b114b1f331fa730477f21fcc&v=4" /></a>
-            <br />
-            <a href="https://github.com/NASA-GukJang">김경윤</a>
-        </td>
-        <td>
-            <a href="https://solved.ac/gukjang1997"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=gukjang1997" /></a>
-        </td>
-        <td align="center" width="130px" height="160px">
-            <a href="https://github.com/jeonhl7579"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/68419483?s=460&v=4" /></a>
-            <br />
-            <a href="https://github.com/jeonhl7579">전세현</a>
-        </td>
-        <td>
-            <a href="https://solved.ac/dhktp123"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=dhktp123" /></a>
-        </td>
-    </tr>
-    <tr>
-        <td align="center" width="130px" height="160px">
-            <a href="https://github.com/Gun1Yun"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/58355979?s=460&v=4" /></a>
-            <br />
-            <a href="https://github.com/Gun1Yun">윤건일</a>
-        </td>
-        <td>
-            <a href="https://solved.ac/gun1yun"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=gun1yun" /></a>
-        </td>
-        <td align="center" width="130px" height="160px">
-            <a href="https://github.com/lee1nna"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/71548623?s=460&u=de7d3ecc50402608132a7f6f635d098e5d6470d4&v=4" /></a>
-            <br />
-            <a href="https://github.com/lee1nna">이한나</a>
-        </td>
-        <td>
-            <a href="https://solved.ac/dlgkssk02"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=dlgkssk02" /></a>
-        </td>
-    </tr>
-</table>
-
 ## Commit
 
 ```
@@ -142,7 +65,9 @@
 |       |
 | 11주차 |            [`17135 캐슬 디펜스`](https://www.acmicpc.net/problem/17135)             | ![status][done]  |     [`1590 캠프가는 영식`](https://www.acmicpc.net/problem/1590)      | ![status][done]  |
 |       |
-| 12주차 |            [`19238 스타트 택시`](https://www.acmicpc.net/problem/19238)             | ![status][doing]  |     [`14503 로봇 청소기`](https://www.acmicpc.net/problem/14503)      | ![status][doing]  |
+| 12주차 |            [`19238 스타트 택시`](https://www.acmicpc.net/problem/19238)             | ![status][done]  |     [`14503 로봇 청소기`](https://www.acmicpc.net/problem/14503)      | ![status][done]  |
+|       |
+| 13주차 |            [` `](?)             | ![status][doing]  |     [` `](?)      | ![status][doing]  |
 
 ## 스크럼
 
@@ -253,6 +178,97 @@
     </ul>
     </div>
 </details>
+
+<details>
+    <summary>21. 04. 01</summary>
+    <div markdown="1">       
+    <ul>
+        <li>?</li>
+    </ul>
+    </div>
+</details>
+
+
+
+## Member
+
+<table>
+    <tr>
+        <td align="center" width="130px" height="160px">
+            <a href="https://github.com/ap4o"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/66770613?s=460&u=fe16d6fa3d8839c4e6beb6fec9e83811041cdaa1&v=4" /></a>
+            <br />
+            <a href="https://github.com/bn-tw2020">남태우</a>
+        </td>
+        <td>
+            <a href="https://solved.ac/ap4o"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=ap4o" /></a>
+        </td>
+        <td align="center" width="130px" height="160px">
+            <a href="https://github.com/thalals"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/42319300?s=460&u=feb753590ea1a1d094b08573bb11f15e801e63cc&v=4" /></a>
+            <br />
+            <a href="https://github.com/thalals">박형민</a>
+        </td>
+        <td>
+            <a href="https://solved.ac/thalals"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=thalals" /></a>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" width="130px" height="160px">
+            <a href="https://github.com/seunghw"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/70190106?s=460&v=4" /></a>
+            <br />
+            <a href="https://github.com/seunghw">김승환</a>
+        </td>
+        <td>
+            <a href="https://solved.ac/sjn6020"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=sjn6020" /></a>
+        </td>        
+        <td align="center" width="130px" height="160px">
+            <a href="https://github.com/thalals"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/53989855?s=460&u=b9eb39f346a7e519bd50ffc3481872821f2f28dd&v=4" /></a>
+            <br />
+            <a href="https://github.com/thalals">한성민</a>
+        </td>
+        <td>
+            <a href="https://solved.ac/songmin9813"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=songmin9813" /></a>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" width="130px" height="160px">
+            <a href="https://github.com/NASA-GukJang"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/39180786?s=460&u=4d9b554cd7ef1e67b114b1f331fa730477f21fcc&v=4" /></a>
+            <br />
+            <a href="https://github.com/NASA-GukJang">김경윤</a>
+        </td>
+        <td>
+            <a href="https://solved.ac/gukjang1997"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=gukjang1997" /></a>
+        </td>
+        <td align="center" width="130px" height="160px">
+            <a href="https://github.com/jeonhl7579"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/68419483?s=460&v=4" /></a>
+            <br />
+            <a href="https://github.com/jeonhl7579">전세현</a>
+        </td>
+        <td>
+            <a href="https://solved.ac/dhktp123"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=dhktp123" /></a>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" width="130px" height="160px">
+            <a href="https://github.com/Gun1Yun"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/58355979?s=460&v=4" /></a>
+            <br />
+            <a href="https://github.com/Gun1Yun">윤건일</a>
+        </td>
+        <td>
+            <a href="https://solved.ac/gun1yun"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=gun1yun" /></a>
+        </td>
+        <td align="center" width="130px" height="160px">
+            <a href="https://github.com/lee1nna"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/71548623?s=460&u=de7d3ecc50402608132a7f6f635d098e5d6470d4&v=4" /></a>
+            <br />
+            <a href="https://github.com/lee1nna">이한나</a>
+        </td>
+        <td>
+            <a href="https://solved.ac/dlgkssk02"><img height="140px" width="275px" src="http://mazassumnida.wtf/api/v2/generate_badge?boj=dlgkssk02" /></a>
+        </td>
+    </tr>
+</table>
+
+
+
 
 ## Reference
 
