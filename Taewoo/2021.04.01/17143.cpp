@@ -1,3 +1,11 @@
+/*
+Comment : 상어는 한칸이 움직이니 시간초과발생
+          최대의 상어수 10000 마리, 10000마리가 1000의 스피드,
+          즉, 1000칸씩 움직이게 될 경우
+          10000 * 1000 = 10^7의 시간이 걸리며, 1~C열까지 움직여야 하니
+          10^7 * 10^2(C의 최대값)
+          한번에 구할 수 있는 방법이 존재하네요.....
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -54,6 +62,15 @@ void move_shark() {
         int dir = shark[i].dir;
         int speed = shark[i].speed;
         
+        if(dir == 1 || dir == 2) {
+            int rot = (R - 1) * 2;
+            if(speed >= rot) speed = speed % rot;
+        }
+        else {
+            int rot = (C - 1) * 2;
+            if(speed >= rot) speed = speed % rot;
+        }
+
         for(int j = 0; j < speed; j++) {
             int nx = x + dx[dir];
             int ny = y + dy[dir];
