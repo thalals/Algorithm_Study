@@ -142,7 +142,9 @@
 |       |
 | 11주차 |            [`17135 캐슬 디펜스`](https://www.acmicpc.net/problem/17135)             | ![status][done]  |     [`1590 캠프가는 영식`](https://www.acmicpc.net/problem/1590)      | ![status][done]  |
 |       |
-| 12주차 |            [`19238 스타트 택시`](https://www.acmicpc.net/problem/19238)             | ![status][doing]  |     [`14503 로봇 청소기`](https://www.acmicpc.net/problem/14503)      | ![status][doing]  |
+| 12주차 |            [`19238 스타트 택시`](https://www.acmicpc.net/problem/19238)             | ![status][done]  |     [`14503 로봇 청소기`](https://www.acmicpc.net/problem/14503)      | ![status][done]  |
+|       |
+| 13주차 |            [` `](?)             | ![status][doing]  |     [` `](?)      | ![status][doing]  |
 
 ## 스크럼
 
