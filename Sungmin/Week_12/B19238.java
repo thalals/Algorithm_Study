@@ -1,16 +1,20 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
+
 public class B19238 {
 	static StringBuilder sb = new StringBuilder();
 	static boolean visited[][];
 	static int engineVisited[][];
 	static int find=0;
 	static int personCount=0;
+	static int boardLevel[][];
 	
-	static class Person{
+	static class Person implements Comparable<Person>{
 		int startX;
 		int startY;
 		int arriveX;
@@ -23,12 +27,21 @@ public class B19238 {
 			this.arriveY=arriveY;
 			this.check=false;
 		}
+		
+		@Override
+		public int compareTo(Person Word) {
+			if(this.startX>Word.startX)return 1;
+			else if(this.startX==Word.startX&&this.startY>Word.startY)return 1;
+			return -1;
+		}
 	}
 	
 	static void visitedClear(int N) {
 		for(int i=1;i<=N;i++) {
-			for(int i1=1;i1<=N;i1++)
+			for(int i1=1;i1<=N;i1++) {
 				visited[i][i1]=false;
+				boardLevel[i][i1]=0;
+			}
 		}
 	}
 	
@@ -42,8 +55,10 @@ public class B19238 {
 		int[][] board=new int[N+1][N+1];
 		visited=new boolean[N+1][N+1];
 		engineVisited=new int[N+1][N+1];
+		boardLevel=new int[N+1][N+1];
 		Queue<Integer> qx = new LinkedList<Integer>();
 		Queue<Integer> qy = new LinkedList<Integer>();
+		ArrayList<Person> personQueue = new ArrayList<Person>();
 		for(int i=1;i<=N;i++){
 			s=input.readLine().split(" ");
 			for(int i1=1;i1<=N;i1++) {
@@ -55,6 +70,7 @@ public class B19238 {
 		int taxiStartX=Integer.parseInt(s[0]);
 		int taxiStartY=Integer.parseInt(s[1]);
 		engineVisited[taxiStartX][taxiStartY]=remainEngine;
+		boardLevel[taxiStartX][taxiStartY]=1;
 		qx.add(taxiStartX);
 		qy.add(taxiStartY);
 		
@@ -72,9 +88,28 @@ public class B19238 {
 			find=board[taxiStartX][taxiStartY];
 		//개시와 동시에 바로 손님을 태울수도 있음
 		
+		boolean passengerFlag=false;
+		int levelFlag=0;
+		
 		while(!qx.isEmpty()) {
 			int X=qx.poll();
 			int Y=qy.poll();
+			if(boardLevel[X][Y]==levelFlag&&passengerFlag) {
+				//손님 탑승 순서 정하기
+				passengerFlag=false;
+				Collections.sort(personQueue);
+				int tempX=personQueue.get(0).startX;
+				int tempY=personQueue.get(0).startY;
+				personQueue.clear();
+				find=board[tempX][tempY];
+				qx.clear();
+				qy.clear();
+				visitedClear(N);
+				qx.add(tempX);
+				qy.add(tempY);
+				visited[tempX][tempY]=true;
+				continue;
+			}
 			if(engineVisited[X][Y]==0) {
 				System.out.print("-1");
 				System.exit(0);
@@ -84,17 +119,24 @@ public class B19238 {
 				int newY=Y+dy[i2];
 				if(newX>=1&&newX<=N&&newY>=1&&newY<=N&&!visited[newX][newY]&&board[newX][newY]!=-1) {
 					engineVisited[newX][newY]=engineVisited[X][Y]-1;
+					boardLevel[newX][newY]=boardLevel[X][Y]+1;
 					remainEngine=engineVisited[newX][newY];
 					if(find==0) {//손님이 택시에 없을 때
 						if(board[newX][newY]!=0&&!passengers[board[newX][newY]].check) {//손님을 만났을 때
-							find=board[newX][newY];
+							passengerFlag=true;
+							levelFlag=boardLevel[newX][newY];
+							personQueue.add(passengers[board[newX][newY]]);
+							qx.add(newX);
+							qy.add(newY);
+							visited[newX][newY]=true;
+							/*find=board[newX][newY];
 							qx.clear();
 							qy.clear();
 							visitedClear(N);
 							qx.add(newX);
 							qy.add(newY);
 							visited[newX][newY]=true;
-							break;
+							break;*/
 						}
 						else {//단순 길을 만났을 때
 							qx.add(newX);
@@ -113,6 +155,7 @@ public class B19238 {
 							qx.clear();
 							qy.clear();
 							visitedClear(N);
+							boardLevel[newX][newY]=1;
 							personCount++;
 							if(personCount==M) {
 								System.out.print(remainEngine);
