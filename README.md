@@ -66,8 +66,11 @@
 | 11주차 |            [`17135 캐슬 디펜스`](https://www.acmicpc.net/problem/17135)             | ![status][done]  |     [`1590 캠프가는 영식`](https://www.acmicpc.net/problem/1590)      | ![status][done]  |
 |       |
 | 12주차 |            [`19238 스타트 택시`](https://www.acmicpc.net/problem/19238)             | ![status][done]  |     [`14503 로봇 청소기`](https://www.acmicpc.net/problem/14503)      | ![status][done]  |
-|       |
-| 13주차 |            [` `](?)             | ![status][doing]  |     [` `](?)      | ![status][doing]  |
+
+### 이전
+
+* 백준 그룹을 이용하여 효율적으로 문제 선택 및 해결
+* 깃허브 자신의 코드 및 레포 관리
 
 ## 스크럼
 
