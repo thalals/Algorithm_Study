@@ -14,7 +14,7 @@ def check(x, y, n):
 
 
 class Wood():
-    def __init__(self, n):
+    def __init__(self, n: int) -> None:
         self.n = n
         self.grounds = [[5]*self.n for _ in range(self.n)]
         self.adds = []
@@ -32,7 +32,6 @@ class Wood():
 
     def spring(self):
         self.woods = deque(sorted(self.woods))
-
         length = len(self.woods)
 
         for _ in range(length):
