@@ -7,74 +7,86 @@ dx = [0, 1, 0, -1, 1, -1, 1, -1]
 dy = [1, 0, -1, 0, 1, 1, -1, -1]
 
 
-def check(x, y, n):
-    if 0 <= x-1 < n and 0 <= y-1 < n:
+def check(x, y, n: int):
+    if 0 <= x < n and 0 <= y < n:
         return True
     return False
 
 
 class Wood():
-    def __init__(self, n: int) -> None:
+    def __init__(self, n: int):
         self.n = n
         self.grounds = [[5]*self.n for _ in range(self.n)]
+        self.woods = [[[] for _ in range(self.n)] for _ in range(self.n)]
+        self.dead = [[0]*self.n for _ in range(self.n)]
         self.adds = []
-        self.woods = deque()
-        self.died = []
+        self.cnt = 0
 
-    def set(self, m):
+    def set(self, m: int):
         for _ in range(self.n):
             sub = list(map(int, In().split()))
             self.adds.append(sub)
 
         for _ in range(m):
-            wood = list(map(int, In().split()))
-            self.woods.append(wood)
+            x, y, age = map(int, In().split())
+            self.woods[x-1][y-1].append(age)
+            self.cnt += 1
+
+        for r in range(self.n):
+            for c in range(self.n):
+                self.woods[r][c].sort()
 
     def spring(self):
-        self.woods = deque(sorted(self.woods))
-        length = len(self.woods)
+        for r in range(self.n):
+            for c in range(self.n):
+                self.woods[r][c].sort()
+                wood = self.woods[r][c]
+                new_wood = []
 
-        for _ in range(length):
-            wood = self.woods.popleft()
-            x, y, age = wood
-            if self.grounds[x-1][y-1] < age:
-                self.died.append(wood)
-            else:
-                self.grounds[x-1][y-1] -= age
-                wood = [x, y, age+1]
-                self.woods.append(wood)
+                for age in wood:
+                    if self.grounds[r][c] < age:
+                        self.dead[r][c] += age//2
+                        self.cnt -= 1
+                    else:
+                        self.grounds[r][c] -= age
+                        new_wood.append(age+1)
+
+                self.woods[r][c] = new_wood
 
     def summer(self):
-        for wood in self.died:
-            x, y, age = wood
-            self.grounds[x-1][y-1] += age//2
-        self.died = []
+        for r in range(self.n):
+            for c in range(self.n):
+                self.grounds[r][c] += self.dead[r][c]
+                self.dead[r][c] = 0
 
     def fall(self):
-        length = len(self.woods)
-        for i in range(length):
-            x, y, age = self.woods[i]
+        for r in range(self.n):
+            for c in range(self.n):
+                wood = self.woods[r][c]
 
-            if age % 5 == 0:
-                for j in range(8):
-                    new_x, new_y = x+dx[j], y+dy[j]
-                    if check(new_x, new_y, self.n):
-                        wood = [new_x, new_y, 1]
-                        self.woods.append(wood)
+                for age in wood:
+                    if age % 5 == 0:
+                        for i in range(8):
+                            new_x, new_y = r+dx[i], c+dy[i]
+                            if check(new_x, new_y, self.n):
+                                self.woods[new_x][new_y].append(1)
+                                self.cnt += 1
 
     def winter(self):
         for i in range(self.n):
             for j in range(self.n):
                 self.grounds[i][j] += self.adds[i][j]
 
-    def solutions(self, k):
+    def solutions(self, k: int):
         for _ in range(k):
             self.spring()
             self.summer()
             self.fall()
             self.winter()
+            if self.cnt == 0:
+                break
 
-        return len(self.woods)
+        return self.cnt
 
 
 def main():
