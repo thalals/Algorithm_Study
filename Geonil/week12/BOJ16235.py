@@ -17,7 +17,7 @@ class Wood():
     def __init__(self, n: int):
         self.n = n
         self.grounds = [[5]*self.n for _ in range(self.n)]
-        self.woods = [[[] for _ in range(self.n)] for _ in range(self.n)]
+        self.woods = [[deque() for _ in range(self.n)] for _ in range(self.n)]
         self.dead = [[0]*self.n for _ in range(self.n)]
         self.adds = []
         self.cnt = 0
@@ -32,16 +32,11 @@ class Wood():
             self.woods[x-1][y-1].append(age)
             self.cnt += 1
 
+    def spring_and_summer(self):
         for r in range(self.n):
             for c in range(self.n):
-                self.woods[r][c].sort()
-
-    def spring(self):
-        for r in range(self.n):
-            for c in range(self.n):
-                self.woods[r][c].sort()
                 wood = self.woods[r][c]
-                new_wood = []
+                new_wood = deque()
 
                 for age in wood:
                     if self.grounds[r][c] < age:
@@ -53,13 +48,10 @@ class Wood():
 
                 self.woods[r][c] = new_wood
 
-    def summer(self):
-        for r in range(self.n):
-            for c in range(self.n):
                 self.grounds[r][c] += self.dead[r][c]
                 self.dead[r][c] = 0
 
-    def fall(self):
+    def fall_and_winter(self):
         for r in range(self.n):
             for c in range(self.n):
                 wood = self.woods[r][c]
@@ -69,20 +61,15 @@ class Wood():
                         for i in range(8):
                             new_x, new_y = r+dx[i], c+dy[i]
                             if check(new_x, new_y, self.n):
-                                self.woods[new_x][new_y].append(1)
+                                self.woods[new_x][new_y].appendleft(1)
                                 self.cnt += 1
 
-    def winter(self):
-        for i in range(self.n):
-            for j in range(self.n):
-                self.grounds[i][j] += self.adds[i][j]
+                self.grounds[r][c] += self.adds[r][c]
 
     def solutions(self, k: int):
         for _ in range(k):
-            self.spring()
-            self.summer()
-            self.fall()
-            self.winter()
+            self.spring_and_summer()
+            self.fall_and_winter()
             if self.cnt == 0:
                 break
 
