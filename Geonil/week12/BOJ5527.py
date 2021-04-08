@@ -2,36 +2,39 @@
 import sys
 In = sys.stdin.readline
 
-# 한번 사용 -> 다음해까지 사용 x
-# 교대패턴, 1번만사용해 가장 긴 교대 패턴
-
 
 def main():
     n = int(In())
     bulbs = list(map(int, In().split()))
+    lst = []
+    cnt = 1
 
-    idx = 0
-    length = 0
+    # split sub bulbs
+    for i in range(0, n-1):
+        if bulbs[i] != bulbs[i+1]:
+            cnt += 1
+        else:
+            lst.append(cnt)
+            cnt = 1
+    # add last bulbs
+    lst.append(cnt)
 
-    while True:
+    answer = 0
+    length = len(lst)
 
-        if bulbs[idx] == bulbs[idx+1] and bulbs[idx+1] != bulbs[idx+2]:
-            start = idx+1
-            finish = idx+2
+    if length == 1:
+        answer = lst[0]
+    else:
+        for i in range(length):
+            if i == 0:
+                tmp = lst[i] + lst[i+1]
+            elif i == length-1:
+                tmp = lst[i-1] + lst[i]
+            else:
+                tmp = lst[i-1] + lst[i] + lst[i+1]
+            answer = max(answer, tmp)
 
-            while True:
-                if bulbs[finish] == bulbs[finish+1]:
-                    break
-                finish += 1
-
-            length = max(length, finish-start+3)
-
-        idx += 1
-
-        if idx == n:
-            break
-
-    print(length)
+    print(answer)
 
 
 if __name__ == "__main__":
