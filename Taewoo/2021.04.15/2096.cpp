@@ -1,7 +1,9 @@
+/*
+Problem : 내려가기
+Comment : 메모리 초과
+*/
 #include <bits/stdc++.h>
 using namespace std;
-// 현재 행에서 최대 값을 구하기 위해서 number의 이전 행 값과 
-// 메모의 이전 행의 값 이외에 필요없음.
 int n;
 int maxDP[100001][3];
 int minDP[100001][3];
