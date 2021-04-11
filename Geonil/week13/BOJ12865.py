@@ -1,3 +1,4 @@
+# 평범한 배낭
 import sys
 In = sys.stdin.readline
 
@@ -13,7 +14,6 @@ def main():
 
     for w, v in items:
         for i in range(k, 0, -1):
-            print(i)
             if w <= i:
                 lst[i] = max(lst[i-w] + v, lst[i])
 
