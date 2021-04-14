@@ -1,14 +1,15 @@
 # 미네랄
 '''
 시간초과
+DFS => BFS
 '''
 import sys
-sys.setrecursionlimit(10**6)
+from collections import deque, defaultdict
 In = sys.stdin.readline
 
-visited = []
-dx = [1, -1, 0, 0]
-dy = [0, 0, -1, 1]
+clusters = []
+dx = [0, -1, 0, 1]
+dy = [1, 0, -1, 0]
 
 r, c = map(int, In().split())
 cave = []
@@ -18,13 +19,6 @@ for _ in range(r):
 
 num = int(In())
 sticks = list(map(int, In().split()))
-
-
-def print_cave():
-    for i in range(r):
-        for j in range(c):
-            print(cave[i][j], end='')
-        print()
 
 
 def check(x, y):
@@ -46,57 +40,61 @@ def get_fall(x, y):
             return height
 
 
-def falling():
-    clusters = sorted(visited, reverse=True)
-    col = []
-    under = []
-
-    for x, y in clusters:
-        if y not in col:
-            col.append(y)
-            under.append([x, y])
+def falling(d_dict):
+    v = sorted(clusters, reverse=True)
 
     height = r
-    for x, y in under:
+    for y, x in d_dict.items():
         height = min(get_fall(x, y), height)
 
-    if height == 0:
-        return
-
-    for x, y in clusters:
+    for x, y in v:
         cave[x][y] = '.'
         cave[x+height][y] = 'x'
 
 
-def dfs(start):
-    visited.append(start)
-    x, y = start
+def bfs(start):
+    queue = deque()
+    d_dict = defaultdict(int)
 
-    for nx, ny in zip(dx, dy):
-        new_x, new_y = x+nx, y+ny
-        if check(new_x, new_y):
-            if cave[new_x][new_y] == 'x' and [new_x, new_y] not in visited:
-                dfs([new_x, new_y])
+    visited = [[0] * c for _ in range(r)]
+    visited[start[0]][start[1]] = 1
+    clusters.append(start)
+    queue.append(start)
 
+    while queue:
+        x, y = queue.popleft()
 
-def check_cluster(start):
-    x, y = start
-    visited.clear()
+        if d_dict[y] < x:
+            d_dict[y] = x
 
-    dfs(start)
-    falling()
+        if x == r-1:
+            return
+
+        for nx, ny in zip(dx, dy):
+            new_x, new_y = x+nx, y+ny
+            if check(new_x, new_y):
+                if cave[new_x][new_y] == 'x' and not visited[new_x][new_y]:
+                    if new_x == r-1:
+                        return
+                    visited[new_x][new_y] = 1
+                    clusters.append([new_x, new_y])
+                    queue.append([new_x, new_y])
+
+    falling(d_dict)
 
 
 def throw(stick: int, turn: int):
     height = r - stick
+
     if turn:    # left
         for i in range(c):
             if cave[height][i] == 'x':
                 break
     else:       # right
-        for i in range(c-1, 0, -1):
+        for i in range(c-1, -1, -1):
             if cave[height][i] == 'x':
                 break
+
     cave[height][i] = '.'
     x, y = height, i
 
@@ -104,7 +102,8 @@ def throw(stick: int, turn: int):
         new_x, new_y = x+nx, y+ny
         if check(new_x, new_y):
             if cave[new_x][new_y] == 'x':
-                check_cluster([new_x, new_y])
+                clusters.clear()
+                bfs([new_x, new_y])
 
 
 def main():
@@ -113,7 +112,8 @@ def main():
         throw(stick, turn)
         turn = abs(turn-1)
 
-    print_cave()
+    for row in cave:
+        print(''.join(row))
 
 
 if __name__ == "__main__":
