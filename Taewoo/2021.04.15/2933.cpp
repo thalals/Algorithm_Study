@@ -1,150 +1,143 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <queue>
+#include <cstring>
 using namespace std;
 
-int dx[] = {-1, 0, 1, 0}; // 북, 서, 남, 동
-int dy[] = {0, -1, 0, 1}; 
-int r, c, n;
-char _map[101][101];
-int stick[101];
+int R, C;
+int N;
+char graph[100][100];
+int visit[100][100];
+int dx[] = {0, 0, -1, 1};
+int dy[] = {1, -1, 0, 0};
+vector<int> stick;
 vector<pair<int, int>> cluster;
 
-void input() {
-    cin >> r >> c;
-    for(int i = 0; i < r; i++) {
-        string s; cin >> s;
-        for(int j = 0; j < c; j++) {
-            _map[i][j] = s[j];
+void print() {
+    for(int i = 0; i < R; i++) {
+        for(int j = 0; j < C; j++) {
+            cout << graph[i][j];
         }
-    }
-    cin >> n;
-    for(int i = 1; i <= n; i++) {
-        int x; cin >> x;
-        stick[i] = x;
+        cout << '\n';
     }
 }
 
-void throw_stick(int flag, int height) {
+void input() {
+    cin >> R >> C;
+    for(int i = 0; i < R; i++) {
+        for(int j = 0; j < C; j++) {
+            cin >> graph[i][j];
+        }
+    }
+    cin >> N;
+    for(int i = 0; i < N; i++) {
+        int stick_num; cin >> stick_num;
+        stick.push_back(stick_num);
+    }
+}
+
+void throw_stick(int height, int flag) {
+    height = R - height;
     if(flag == 1) {
-        // 오 -> 왼
-        for(int i = c - 1; i >= 0; i--) {
-            if(_map[height][i] == 'x') {
-                _map[height][i] = '.';
+        // Left
+        for(int i = 0; i < C; i++) {
+            if(graph[height][i] == 'x') {
+                graph[height][i] = '.';
                 break;
             }
         }
     }
-
-    else if(flag == 2) {
-        // 왼 -> 오
-        for(int i = 0; i < c; i++) {
-            if(_map[height][i] == 'x') {
-                _map[height][i] = '.';
+    if(flag == 2) {
+        // Right
+        for(int i = C - 1; i >= 0; i--) {
+            if(graph[height][i] == 'x') {
+                graph[height][i] = '.';
                 break;
             }
+        }
+    }
+}
+
+void bfs(int x, int y) {
+    queue<pair<int, int>> q;
+    visit[x][y] = 1;
+    q.push({x, y});
+
+    while(!q.empty()) {
+        pair<int, int> p = q.front(); q.pop();
+
+        for(int i = 0; i < 4; i++) {
+            int nx = p.first + dx[i];
+            int ny = p.second + dy[i];
+
+            if(visit[nx][ny] || graph[nx][ny] == '.' || nx < 0 || ny < 0 || nx == R || ny == C)
+                continue;
+            
+            visit[nx][ny] = true;
+            q.push({nx, ny});
         }
     }
 }
 
 void find_cluster() {
-    queue<pair<int, int>> q;
+    memset(visit, 0, sizeof(visit));
+    for(int i = 0; i < C; i++) {
+        if(graph[R - 1][i] == '.' || visit[R - 1][i]) continue;
+        bfs(R - 1, i);
+    }
+
+    // 공중 미네랄 찾기
     cluster.clear();
-    int visited[101][101];
-    memset(visited, 0, sizeof(visited));
-    
-    for(int i = 0; i < c; i++) {
-        // 바닥이 구멍이거나 방문했던 곳이면 제외
-        if(_map[r - 1][i] == '.' || visited[r - 1][i])  continue;
-        
-        // 방문하지 않고 미네랄이면
-        visited[r - 1][i] = 1;
-        q.push({r -1, i});
-
-        while(!q.empty()) {
-            int x, y;
-            tie(x, y) = q.front(); q.pop();
-
-            for(int j = 0; j < 4; j++) {
-                int nx = x + dx[j];
-                int ny = y + dy[j];
-                if(nx < 0 || nx == r || ny < 0 || ny == c) continue;
-                if(visited[nx][ny] || _map[nx][ny] == '.') continue;
-
-                visited[nx][ny] = 1;
-                q.push({nx, ny});
+    for(int i = 0; i < R; i++) {
+        for(int j = 0; j < C; j++) {
+            if(!visit[i][j] && graph[i][j] == 'x') {
+                graph[i][j] = '.';
+                cluster.push_back({i, j});
             }
         }
     }
-};
-
-void drop_cluster() {
-    // cout << '\n';
-    // for(int i = 0; i < r; i++) {
-    //     for(int j = 0; j < c; j++) {
-    //         cout << _map[i][j] << ' ';
-    //     }
-    //     cout << '\n';
-    // }
-    // cout << '\n';
-
-
-    int temp[101][101];
-    memset(temp, 0, sizeof(temp));
-
-    int temp_row = n - 1;
-    for(int col = 0; col < c; col++) {
-        for(int row = r - 1; row >= 0; row--) {
-            if(_map[row][col] != 0) {
-                temp[temp_row][col] = _map[row][col];
-                temp_row--;
-            }
-        }
-    }
-    
-    for(int row = 0; row < r; row++) {
-        for(int col = 0; col < c; col++) {
-            _map[row][col] = temp[row][col];
-        }
-    }   
-
-    // cout << '\n';
-    // for(int i = 0; i < r; i++) {
-    //     for(int j = 0; j < c; j++) {
-    //         cout << _map[i][j] << ' ';
-    //     }
-    //     cout << '\n';
-    // }
-    // cout << '\n';
-
 }
 
-void pro() {
-    for(int i = 1; i <= n; i++) {
-        int flag;
-        // 짝수 ; 오 -> 왼
-        if(i % 2 == 0) flag = 1;
-        // 홀수 ; 왼 -> 오
-        else flag = 2;
-        int height = r - stick[i];
-
-        throw_stick(flag, height); // 막대기 던지기    
-        cout << '\n';
-        for(int i = 0; i < r; i++) {
-            for(int j = 0; j < c; j++) {
-                cout << _map[i][j] << ' ';
+void fall_cluster() {
+    if(cluster.size() == 0) return;
+    bool down = true;
+    while(down) {
+        for(pair<int, int> p : cluster) {
+            int nx = p.first + 1;
+            int ny = p.second;
+            // cout << nx << ' ' << ny << '\n';
+            if(nx < 0 || ny < 0 || nx >= R || ny >= C || graph[nx][ny] == 'x') {
+                down = false;
+                break;
+            }
         }
-            cout << '\n';
+
+        if(down) {
+            for(pair<int, int> &p : cluster) {
+                p.first++;
+            }
         }
-        cout << '\n';    
-
-        // find_cluster(); // 클러스터 분해되거 찾기
-        // drop_cluster(); // 클러스터 떨어뜨려서 맵 변화시키기
-
     }
-};
+
+    for(pair<int, int> p: cluster) {
+        graph[p.first][p.second] = 'x';
+    }
+}
+
+void process() {
+    for(int i = 0; i < stick.size(); i++) {
+        if(i % 2 == 0) throw_stick(stick[i], 1);
+        else throw_stick(stick[i], 2);
+        find_cluster();
+        fall_cluster();
+    }
+    print();
+}
 
 int main() {
     ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    cin.tie(0); cout.tie(0);
     input();
-    pro();
+    process();
 }
