@@ -1,7 +1,9 @@
-# 미네랄
 '''
+미네랄
 시간초과
 DFS => BFS
+
+pypy3
 '''
 import sys
 from collections import deque, defaultdict
