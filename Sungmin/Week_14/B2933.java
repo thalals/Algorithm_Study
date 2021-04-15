@@ -45,11 +45,6 @@ public class B2933 {
 				//미네랄 칸이 1, 빈 칸이 0
 			}
 		}
-		/*clusterQueue.add(new XY(1,2));
-		clusterQueue.add(new XY(3,1));
-		clusterQueue.add(new XY(4,4));
-		clusterQueue.add(new XY(3,4));
-		Collections.sort(clusterQueue);*/
 		//돌던지기 시작
 		int rockCount=Integer.parseInt(input.readLine());
 		s=input.readLine().split(" ");
@@ -78,13 +73,15 @@ public class B2933 {
 		int[] dy= {0,-1,1,0};
 		while(!queue.isEmpty()) {
 			XY temp=queue.poll();
-			clusterQueue.add(temp);
+			if(temp.x==1) {
+				clustering=false;
+				return;
+			}
+			clusterQueue.add(new XY(temp.x,temp.y));
 			for(int i=0;i<4;i++) {
 				int newX=temp.x+dx[i];
 				int newY=temp.y+dy[i];
 				if(newX>=1&&newX<=r&&newY>=1&&newY<=c&&!visited[newX][newY]&&board[newX][newY]==1) {//유효성 검사
-					if(newX==1) clustering=false;
-					if(!clustering) return;
 					visited[newX][newY]=true;
 					queue.add(new XY(newX, newY));
 				}
@@ -113,7 +110,8 @@ public class B2933 {
 				}
 			}
 			for(int i=0;i<clusterDir.size();i++) {
-				queue.add(clusterDir.get(i));
+				queue.add(new XY(clusterDir.get(i).x,clusterDir.get(i).y));
+				visited[clusterDir.get(i).x][clusterDir.get(i).y]=true;
 				bfs(x,i1,r,c);
 				if(clustering) {
 					cluster();
@@ -133,7 +131,7 @@ public class B2933 {
 	
 	static void cluster() {
 		//findFloor(); 바닥 좌표 찾을 필요가 있을까?
-		for(int i=0;i<clusterQueue.size();i++)
+		for(int i=0;i<clusterQueue.size();i++)//board 초기화. 나중에 다시 찍어야 됨
 			board[clusterQueue.get(i).x][clusterQueue.get(i).y]=0;
 		int count=0;
 		while(true) {
@@ -147,7 +145,7 @@ public class B2933 {
 			}
 		}
 	}
-	static void findFloor() {//바닥 좌표 찾기+보드에서 클러스터 삭제(나중에 다시 찍어야 됨)
+	static void findFloor() {//바닥 좌표 찾기+보드에서 클러스터 삭제(나중에 다시 찍어야 됨). 지금은 안 씀
 		//Collections.sort(clusterQueue);
 		for(int i=0;i<clusterQueue.size();i++) {
 			XY temp=clusterQueue.get(i);
@@ -158,8 +156,12 @@ public class B2933 {
 	}
 	
 	static void makingFloor(int count) {
-		for(int i=0;i<clusterQueue.size();i++)
+		for(int i=0;i<clusterQueue.size();i++) {
+			if(board[clusterQueue.get(i).x-count][clusterQueue.get(i).y]==1)
+				System.out.print("Error");
 			board[clusterQueue.get(i).x-count][clusterQueue.get(i).y]=1;
+		}
+			
 	}
 	
 	static void print(int r, int c) {
