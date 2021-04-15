@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -14,12 +15,22 @@ public class B2933 {
 	static boolean clustering=true;
 	static int[][] board;
 	static boolean[][] visited;
-	static class XY{
+	static class XY implements Comparable<XY>{
 		int x;
 		int y;
 		XY(int x, int y){
 			this.x=x;
 			this.y=y;
+		}
+		
+		@Override
+		public int compareTo(XY Word) {
+			if(this.y<Word.y)return -1;
+			else if(this.y==Word.y) {
+				if(this.x<Word.x)return -1;
+				else if(this.x==Word.x)return 0;
+			}
+			return 1;
 		}
 	}
 	static Queue<XY> queue= new LinkedList<XY>();
@@ -29,9 +40,7 @@ public class B2933 {
 	static StringBuilder sb=new StringBuilder();
 	
 	public static void main(String[] args) throws IOException {
-		
 		BufferedReader input=new BufferedReader(new InputStreamReader(System.in));
-		
 		String[] s= input.readLine().split(" ");
 		int r=Integer.parseInt(s[0]);
 		int c=Integer.parseInt(s[1]);
@@ -89,14 +98,9 @@ public class B2933 {
 		}
 	}
 	
-	/*static void visitedClear(int r, int c) {
-		for(int i=1;i<=r;i++) {
-			for(int i1=1;i1<=c;i1++)
-				visited[i][i1]=false;
-		}
-	}*/
-	
 	static boolean rockJudge(int x, int i1, int r, int c) {
+		//한 번 막대기가 적중을 하면->적중 위치 기준으로 4방향 검사. 4방향에 미네랄이 있는 경우 임시큐//클러스터 큐에 저장을 먼저 한 다음에
+		//클러스터 큐에 저장된 좌표 하나하나씩 bfs적용
 		if(board[x][i1]==1) {
 			board[x][i1]=0;
 			visited[x][i1]=true;
@@ -116,6 +120,11 @@ public class B2933 {
 				if(clustering) {
 					cluster();
 					//분리 작업 시작 함수 추가
+					queue.clear();
+					clusterQueue.clear();
+					clusterFloor.clear();
+					visited=new boolean[r+1][c+1];
+					break;//이거 어떠헥 섬기;ㅏ서시;
 				}
 				else clustering=true;//분리되지 않음
 				queue.clear();
@@ -130,28 +139,31 @@ public class B2933 {
 	}
 	
 	static void cluster() {
-		//findFloor(); 바닥 좌표 찾을 필요가 있을까?
-		for(int i=0;i<clusterQueue.size();i++)//board 초기화. 나중에 다시 찍어야 됨
-			board[clusterQueue.get(i).x][clusterQueue.get(i).y]=0;
+		findFloor();
 		int count=0;
 		while(true) {
 			count++;
-			for(int i=0;i<clusterQueue.size();i++) {
-				XY temp=clusterQueue.get(i);
+			for(int i=0;i<clusterFloor.size();i++) {
+				XY temp=clusterFloor.get(i);
 				if(temp.x-count==1||(temp.x-count>=2&&board[temp.x-count-1][temp.y]==1)) {
+					//1. 바닥을 만났을 경우 또는 2. 미네랄을 만났을 경우
 					makingFloor(count);
 					return;
 				}
 			}
 		}
 	}
-	static void findFloor() {//바닥 좌표 찾기+보드에서 클러스터 삭제(나중에 다시 찍어야 됨). 지금은 안 씀
-		//Collections.sort(clusterQueue);
+	
+	static void findFloor() {//바닥 좌표 찾기+보드에서 클러스터 삭제(나중에 다시 찍어야 됨)
+		Collections.sort(clusterQueue);
+		int indexY=-1;
 		for(int i=0;i<clusterQueue.size();i++) {
 			XY temp=clusterQueue.get(i);
 			board[temp.x][temp.y]=0;
-			if(board[temp.x-1][temp.y]==0)
-				clusterFloor.add(temp);
+			if(temp.y==indexY)
+				continue;
+			indexY=clusterQueue.get(i).y;
+			clusterFloor.add(new XY(temp.x,temp.y));
 		}
 	}
 	
