@@ -1,67 +1,77 @@
 # 가운데를 말해요
+# 시간초과 1 : 정렬
+# 시간초과 2 : list 두개 이용
+# 시간초과 3 : left, right 개수, index 이용
+# 해결 : heapq(우선순위 큐) 이용 left, right
 import sys
+import heapq
 In = sys.stdin.readline
+
+
+class MaxHeap():
+    def __init__(self):
+        self.heap = []
+        self.cnt = 0
+
+    def push(self, num):
+        heapq.heappush(self.heap, (-num, num))
+
+    def pop(self):
+        return heapq.heappop(self.heap)[1]
+
+    def get_length(self):
+        return len(self.heap)
+
+
+class MinHeap():
+    def __init__(self):
+        self.heap = []
+
+    def push(self, num):
+        heapq.heappush(self.heap, num)
+
+    def pop(self):
+        return heapq.heappop(self.heap)
+
+    def get_length(self):
+        return len(self.heap)
 
 
 class Mid():
     def __init__(self, n):
-        self.left = []
-        self.right = []
-        self.mid = 0
+        self.left = MaxHeap()
+        self.right = MinHeap()
         self.mids = [0] * n
+        self.mid = 0
         self.cnt = 0
-        self.lc = 0
-        self.rc = 0
 
     def push(self, num):
+
         if self.cnt == 0:
             self.mid = num
         else:
-            if self.mid <= num:
-                if self.right:
-                    for i in range(self.rc):
-                        if self.right[i] <= num:
-                            self.right.insert(i, num)
-                            break
-                    if num < self.right[i]:
-                        self.right.append(num)
-                else:
-                    self.right.append(num)
-                self.rc += 1
+            if self.mid < num:
+                self.right.push(num)
             else:
-                if self.left:
-                    for i in range(self.lc):
-                        if num < self.left[i]:
-                            self.left.insert(i, num)
-                            break
-                    if num > self.left[i]:
-                        self.left.append(num)
-                else:
-                    self.left.append(num)
-                self.lc += 1
+                self.left.push(num)
         self.cnt += 1
 
+        lc = self.left.get_length()
+        rc = self.right.get_length()
         # adjust mid
-        if self.cnt % 2 != 0 and (self.left or self.right):
-            if self.lc < self.rc:
-                self.left.append(self.mid)
-                self.mid = self.right.pop()
-                self.lc += 1
-                self.rc -= 1
-            elif self.lc > self.rc:
-                self.right.append(self.mid)
+        if self.cnt % 2 == 0:
+            if lc > rc:
+                self.right.push(self.mid)
                 self.mid = self.left.pop()
-                self.lc -= 1
-                self.rc += 1
+        else:
+            if lc or rc:
+                if lc < rc:
+                    self.left.push(self.mid)
+                    self.mid = self.right.pop()
+                elif rc < lc:
+                    self.right.push(self.mid)
+                    self.mid = self.left.pop()
 
-        if self.cnt % 2 == 0 and (self.lc > self.rc):
-            self.right.append(self.mid)
-            self.mid = self.left.pop()
-            self.rc += 1
-            self.lc -= 1
-
-        # check
-        # print(self.left, self.mid, self.right[::-1])
         self.mids[self.cnt-1] = self.mid
 
     def get_mids(self):
