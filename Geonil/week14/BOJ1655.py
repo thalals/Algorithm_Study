@@ -1,68 +1,71 @@
 # 가운데를 말해요
+# 시간초과 1 : 정렬
+# 시간초과 2 : list 두개 이용
+
 import sys
 In = sys.stdin.readline
 
 
 class Mid():
     def __init__(self, n):
-        self.left = []
-        self.right = []
-        self.mid = 0
+        self.lst = [0] * 20001
         self.mids = [0] * n
-        self.cnt = 0
+
+        self.mid = -1
+
+        self.mc = 0
         self.lc = 0
         self.rc = 0
+        self.cnt = 0
 
     def push(self, num):
-        if self.cnt == 0:
+
+        self.lst[num] += 1
+
+        if self.mid == -1:
             self.mid = num
+            self.mc = 1
         else:
-            if self.mid <= num:
-                if self.right:
-                    for i in range(self.rc):
-                        if self.right[i] <= num:
-                            self.right.insert(i, num)
-                            break
-                    if num < self.right[i]:
-                        self.right.append(num)
-                else:
-                    self.right.append(num)
+            if num < self.mid:
+                self.lc += 1
+            elif num > self.mid:
                 self.rc += 1
             else:
-                if self.left:
-                    for i in range(self.lc):
-                        if num < self.left[i]:
-                            self.left.insert(i, num)
-                            break
-                    if num > self.left[i]:
-                        self.left.append(num)
-                else:
-                    self.left.append(num)
-                self.lc += 1
+                self.mc += 1
         self.cnt += 1
 
+        print(self.lc, self.mc, self.rc)
+
         # adjust mid
-        if self.cnt % 2 != 0 and (self.left or self.right):
-            if self.lc < self.rc:
-                self.left.append(self.mid)
-                self.mid = self.right.pop()
-                self.lc += 1
-                self.rc -= 1
-            elif self.lc > self.rc:
-                self.right.append(self.mid)
-                self.mid = self.left.pop()
-                self.lc -= 1
-                self.rc += 1
+        if self.cnt % 2 == 0:
+            if self.lc >= self.rc + self.mc:
+                while True:
+                    self.mid -= 1
+                    if self.lst[self.mid]:
+                        self.rc += self.mc
+                        self.mc = self.lst[self.mid]
+                        self.lc -= self.mc
+                        break
 
-        if self.cnt % 2 == 0 and (self.lc > self.rc):
-            self.right.append(self.mid)
-            self.mid = self.left.pop()
-            self.rc += 1
-            self.lc -= 1
+        if self.cnt % 2 != 0 and (self.lc or self.rc):
+            if self.lc + self.mc < self.rc:
+                while True:
+                    self.mid += 1
+                    if self.lst[self.mid]:
+                        self.lc += self.mc
+                        self.mc = self.lst[self.mid]
+                        self.rc -= self.mc
+                        break
+            elif self.rc + self.mc < self.lc:
+                while True:
+                    self.mid -= 1
+                    if self.lst[self.mid]:
+                        self.rc += self.mc
+                        self.mc = self.lst[self.mid]
+                        self.lc -= self.mc
+                        break
 
-        # check
-        # print(self.left, self.mid, self.right[::-1])
-        self.mids[self.cnt-1] = self.mid
+        self.mids[self.cnt-1] = self.mid-10000
 
     def get_mids(self):
         s = ''
@@ -80,7 +83,7 @@ def main():
         numbers[i] = int(In())
 
     for item in numbers:
-        mid.push(item)
+        mid.push(item+10000)
 
     mid.get_mids()
 
