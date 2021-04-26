@@ -1,5 +1,6 @@
-# 문제집
+# 이중 우선순위 큐
 # Index Error : heap 2개 이용, poped 배열로 체크
+# Index Error solve : code 수정 (마지막 조건)
 import sys
 import heapq
 
@@ -45,15 +46,13 @@ class DoulbePQ():
             return
 
         while self.poped[self.maxheap[0][2]]:
-            if self.maxheap:
-                heapq.heappop(self.maxheap)
-            else:
+            heapq.heappop(self.maxheap)
+            if not self.maxheap:
                 break
 
         while self.poped[self.minheap[0][1]]:
-            if self.minheap:
-                heapq.heappop(self.minheap)
-            else:
+            heapq.heappop(self.minheap)
+            if not self.minheap:
                 break
 
         if self.maxheap and self.minheap:
