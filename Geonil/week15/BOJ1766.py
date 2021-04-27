@@ -8,44 +8,59 @@ In = sys.stdin.readline
 class Workbook():
     def __init__(self, n):
         self.n = n
-        self.pointer = 1
         self.easyheap = []
         self.ordered = []
-        self.problems = [False]*(n+1)
+        self.problems = [0]*(n+1)
         self.solved = [False]*(n+1)
 
     def push(self, con):
         heapq.heappush(self.easyheap, con)
-        self.problems[con[1]] = True
+        self.problems[con[1]] += 1
 
     def solve(self):
+        pointer: int = 1
+        print(self.easyheap)
+        while self.easyheap:
+            print(heapq.heappop(self.easyheap))
+
         while True:
             if len(self.ordered) == self.n:
                 break
+
             print(self.ordered)
 
-            if self.solved[self.pointer]:
-                self.pointer += 1
-                continue
+            if pointer <= self.n:
+                if self.solved[pointer]:
+                    pointer += 1
+                    continue
 
-            if not self.problems[self.pointer] and not self.solved[self.pointer]:
-                self.ordered.append(self.pointer)
-                self.solved[self.pointer] = True
-            else:
-                print('---')
-                print(self.easyheap)
-                solve_pro = heapq.heappop(self.easyheap)
-                print(solve_pro)
-                print(self.easyheap)
-                print('---')
+                if self.problems[pointer] == 0:
+                    self.solved[pointer] = True
+                    self.ordered.append(pointer)
+                    pointer += 1
+                else:
+                    first, last = self.easyheap[0]
+                    print(pointer, first, last)
+                    break
 
-                self.ordered.append(solve_pro[0])
-                self.solved[solve_pro[0]]
-                if not self.solved[solve_pro[1]] and not self.problems[solve_pro[1]]:
-                    self.ordered.append(solve_pro[1])
-                    self.solved[solve_pro[1]]
+            # else:
+            #     print('---')
+            #     print(self.easyheap)
+            #     first, after = heapq.heappop(self.easyheap)
+            #     print(self.easyheap)
+            #     print('---')
 
-            self.pointer += 1
+            #     if not self.solved[first]:
+            #         self.ordered.append(first)
+            #         self.solved[first] = True
+
+            #     if not self.solved[after]:
+            #         if self.problems[after] == 1:
+            #             self.problems[after] -= 1
+            #             self.ordered.append(after)
+            #             self.solved[after]
+            #         else:
+            #             self.problems[after] -= 1
 
         print(self.ordered)
 
