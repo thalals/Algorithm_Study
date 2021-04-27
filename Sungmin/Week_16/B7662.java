@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.LinkedList;
-
+//ÇØ°á Áß
 public class B7662 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader input=new BufferedReader(new InputStreamReader(System.in));
