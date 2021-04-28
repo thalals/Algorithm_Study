@@ -7,6 +7,7 @@ using namespace std;
 
 int T, N, W, H, ret;
 int graph[15][12];
+int temp[15][12];
 int dx[] = {0, 1, 0, -1};
 int dy[] = {1, 0, -1, 0};
 /*
@@ -32,29 +33,40 @@ void boom(int x, int y) {
 }
 
 void fall() {
-    for(int i = 0; i < W; i++) {
-        while(1) {
-            bool isOk = false;
-            for(int j = H - 1; j > 0; j--) {
-                if(graph[j][i] == 0 && graph[j - 1][i] != 0) {
-                    graph[j][i] = graph[j - 1][i];
-                    graph[j - 1][i] = 0;
-                    isOk = true;
-                }
+    // for(int i = 0; i < W; i++) {
+    //     while(1) {
+    //         bool isOk = false;
+    //         for(int j = H - 1; j > 0; j--) {
+    //             if(graph[j][i] == 0 && graph[j - 1][i] != 0) {
+    //                 graph[j][i] = graph[j - 1][i];
+    //                 graph[j - 1][i] = 0;
+    //                 isOk = true;
+    //             }
+    //         }
+    //         if(!isOk) break;
+    //     }
+    // }
+    for(int i = 0; i < H; i++) for(int j = 0; j < W; j++) temp[i][j] = 0;
+
+    for(int j = 0; j < W; j++) {
+        int last_idx = H - 1;
+        for(int i = H - 1; i >= 0; i--) {
+            if(graph[i][j]) {
+                temp[last_idx--][j] = graph[i][j];
             }
-            if(!isOk) break;
         }
     }
+
+    for(int i = 0; i < H; i++) for(int j = 0; j < W; j++) graph[i][j] = temp[i][j];
 }
 
 void process(int cnt) {
     if(cnt == N) {
         int answer = 0;
-        for(int i = 0; i < H; i++) {
-            for(int j = 0; j < W; j++) {
+        for(int i = 0; i < H; i++) 
+            for(int j = 0; j < W; j++) 
                 if(graph[i][j] != 0) answer++;
-            }
-        }
+            
         ret = min(ret, answer);
         return;
     }

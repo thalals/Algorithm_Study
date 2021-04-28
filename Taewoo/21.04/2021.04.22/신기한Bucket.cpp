@@ -37,43 +37,37 @@ void dropOneBlock(int block_type, int drop_idx) {
 
 int bomb() {
     int score = 0;
-    for(int i = 0; i <= n; i++)
-        if(bucket[i][1] && bucket[i][2] && bucket[i][3] && bucket[i][4]) {
-            bucket[i][1] = bucket[i][2] = bucket[i][3] = bucket[i][4] = 0;
+    for(int i = 0; i <= n; i++) {
+        int cnt = 0;
+        for(int j = 1; j <= 4; j++) {
+            if(bucket[i][j]) cnt++;
+        }
+        if(cnt == 4) {
+            for(int j = 1; j <= 4; j++) {
+                bucket[i][j] = 0;
+            }
             score += 1;
         }
-    
+    }
+
     return score;
 }
 
 void gravity() {
-    for(int i = 1; i <= 4; i++) {
-        while(1) {
-            bool isOk = false;
-            for(int j = n; j >= 0; j--) {
-                if(bucket[j][i] == 0 && bucket[j - 1][i] != 0) {
-                    bucket[j][i] = bucket[j - 1][i];
-                    bucket[j - 1][i] = 0;
-                    isOk = true;
-                }
-            }
-            if(!isOk) break;
-        }
+    for(int i = 0; i <= n; i++)
+        for(int j = 1; j <= 4; j++)
+            temp[i][j] = 0;
+
+    for(int j = 1; j <= 4; j++) {
+        int last_idx = n;
+        for(int i = n; i >= 0; i--)
+            if(bucket[i][j])
+                temp[last_idx--][j] = bucket[i][j];
     }
-    // for(int i = 0; i <= n; i++)
-    //     for(int j = 1; j <= 4; j++)
-    //         temp[i][j] = 0;
 
-    // for(int j = 1; j <= 4; j++) {
-    //     int last_idx = n;
-    //     for(int i = n; i >= 0; i--)
-    //         if(bucket[i][j])
-    //             temp[last_idx--][j] = bucket[i][j];
-    // }
-
-    // for(int i = 0; i <= n; i++)
-    //     for(int j = 1; j <= 4; j++)
-    //         bucket[i][j] = temp[i][j];
+    for(int i = 0; i <= n; i++)
+        for(int j = 1; j <= 4; j++)
+            bucket[i][j] = temp[i][j];
 }
 
 void update(int x, int y, int block_type) {
@@ -112,7 +106,6 @@ void move() {
 }
 
 int Score() {
-
     int curr_score = 0;
 
     for(int i = 0; i <= n; i++)
@@ -130,7 +123,6 @@ int Score() {
     
     
         move();
-        // print();
         gravity();
 
         curr_score += bomb();

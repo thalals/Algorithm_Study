@@ -113,14 +113,6 @@ int main() {
         }
     }
 
-    // cout << '\n';
-    // for(int i = 0; i < M; i++) {
-    //     for(int j = 0; j < M; j++) {
-    //         cout << dist[i][j] << ' ';
-    //     }
-    //     cout << '\n';
-    // }
-
     dfs(0, 0, 0);
     if(answer == INT_MAX) answer = -1;
     cout << answer;
