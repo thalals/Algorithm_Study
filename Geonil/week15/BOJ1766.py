@@ -1,4 +1,5 @@
-# 문제집
+# 문제집 (BOJ 1766)
+# topological sorting + Priority Queue
 import sys
 import heapq
 
@@ -6,63 +7,36 @@ In = sys.stdin.readline
 
 
 class Workbook():
-    def __init__(self, n):
+    def __init__(self, n: int):
         self.n = n
-        self.easyheap = []
+        self.minheap = []
         self.ordered = []
-        self.problems = [0]*(n+1)
-        self.solved = [False]*(n+1)
+        self.graph = [[] for _ in range(n+1)]
+        self.degree = [0] * (n+1)
 
-    def push(self, con):
-        heapq.heappush(self.easyheap, con)
-        self.problems[con[1]] += 1
+    def push(self, item: tuple):
+        first, last = item
+        self.degree[last] += 1
+        self.graph[first].append(last)
 
     def solve(self):
-        pointer: int = 1
-        print(self.easyheap)
-        while self.easyheap:
-            print(heapq.heappop(self.easyheap))
+        # push 0 degree vertex
+        for i in range(1, self.n+1):
+            if self.degree[i] == 0:
+                heapq.heappush(self.minheap, i)
 
-        while True:
-            if len(self.ordered) == self.n:
-                break
+        # topological sorting with minheap
+        while self.minheap:
+            solved = heapq.heappop(self.minheap)
+            self.ordered.append(solved)
 
-            print(self.ordered)
+            for problem in self.graph[solved]:
+                self.degree[problem] -= 1
+                if self.degree[problem] == 0:
+                    heapq.heappush(self.minheap, problem)
 
-            if pointer <= self.n:
-                if self.solved[pointer]:
-                    pointer += 1
-                    continue
-
-                if self.problems[pointer] == 0:
-                    self.solved[pointer] = True
-                    self.ordered.append(pointer)
-                    pointer += 1
-                else:
-                    first, last = self.easyheap[0]
-                    print(pointer, first, last)
-                    break
-
-            # else:
-            #     print('---')
-            #     print(self.easyheap)
-            #     first, after = heapq.heappop(self.easyheap)
-            #     print(self.easyheap)
-            #     print('---')
-
-            #     if not self.solved[first]:
-            #         self.ordered.append(first)
-            #         self.solved[first] = True
-
-            #     if not self.solved[after]:
-            #         if self.problems[after] == 1:
-            #             self.problems[after] -= 1
-            #             self.ordered.append(after)
-            #             self.solved[after]
-            #         else:
-            #             self.problems[after] -= 1
-
-        print(self.ordered)
+        for problem in self.ordered:
+            print(problem, end=' ')
 
 
 def main():
