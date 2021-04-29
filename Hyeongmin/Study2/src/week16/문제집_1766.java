@@ -7,17 +7,17 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.PriorityQueue;
 
-class Data implements Comparable<Data>{
+class D implements Comparable<D>{
 	int number;
 	int priority;
 	
-	Data(int number, int priority){
+	D(int number, int priority){
 		this.number = number;
 		this.priority = priority;
 	}
 	
 	@Override
-	public int compareTo(Data o) {
+	public int compareTo(D o) {
 		if(this.priority> o.priority)
 			return 1;
 		//우선순위가 같을때는 문제숫자별로
@@ -32,7 +32,7 @@ public class 문제집_1766 {
 
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringBuilder bw = new StringBuilder();
 		
 		String temp[] = br.readLine().split(" ");
 		int n = Integer.parseInt(temp[0]);
@@ -40,7 +40,7 @@ public class 문제집_1766 {
 		
 		boolean visit[] = new boolean[n+1];	//1부터 시작
 		
-		PriorityQueue<Data> list = new PriorityQueue<Data>();
+		PriorityQueue<D> list = new PriorityQueue<D>();
 		
  		//m개의 먼저풀어야할 문제쌍
 		for(int i=0;i<m;i++) {
@@ -49,7 +49,7 @@ public class 문제집_1766 {
 			int backNumber = Integer.parseInt(temp[1]);
 
 			visit[backNumber] = true;
-			Data data = new Data(backNumber, number+1);	//바로뒤에 오는게 제일 효율이 좋음
+			D data = new D(backNumber, number+1);	//바로뒤에 오는게 제일 효율이 좋음
 			list.add(data);
 		}
 		
@@ -57,8 +57,7 @@ public class 문제집_1766 {
 			if(visit[i])
 				continue;
 			
-			visit[i]=true;
-			Data data = new Data(i, i);	//바로뒤에 오는게 제일 효율이 좋음
+			D data = new D(i, i);	//바로뒤에 오는게 제일 효율이 좋음
 			list.add(data);
 		}
 		
@@ -69,7 +68,7 @@ public class 문제집_1766 {
 				bw.append(list.poll().number+" ");
 		}
 		
-		bw.close();
+		System.out.print(bw.toString());
 		br.close();
 	}
 
