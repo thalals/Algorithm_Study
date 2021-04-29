@@ -12,6 +12,7 @@ def frequency(string: str) -> str:
 
     cnt = 0
     flag = False
+    max_char = '?'
 
     for key, value in alpha_dict.items():
         if value > cnt:
