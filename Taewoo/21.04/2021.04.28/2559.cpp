@@ -1,12 +1,13 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <cmath>
 using namespace std;
 
 int main() {
     int n, k;
     cin >> n >> k;
-
+    
     vector<int> arr;
     arr.push_back(0);
 
