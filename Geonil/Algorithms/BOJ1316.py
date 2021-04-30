@@ -6,6 +6,7 @@ In = sys.stdin.readline
 
 def check_group_word(string: str) -> bool:
     alpha = defaultdict(bool)
+
     for idx in range(0, len(string)-1):
         if alpha[string[idx+1]]:
             return False
@@ -14,6 +15,7 @@ def check_group_word(string: str) -> bool:
             continue
         else:
             alpha[string[idx]] = True
+
     return True
 
 
