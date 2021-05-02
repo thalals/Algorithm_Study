@@ -22,7 +22,6 @@ def binary_search(person: str, start: int, end: int) -> bool:
 def main():
     lst = []
     heard.sort()
-    print(heard)
 
     for _ in range(m):
         person = In().rstrip()
@@ -31,8 +30,7 @@ def main():
 
     lst.sort()
     print(len(lst))
-    for person in lst:
-        print(person)
+    print('\n'.join(lst))
 
 
 if __name__ == "__main__":
