@@ -1,78 +1,33 @@
 # 회문 Palindrome (BOJ 17609)
 import sys
 In = sys.stdin.readline
+sys.setrecursionlimit(10**6)
 
 
-def check_palindrome(string: str) -> int:
-    length = len(string)
-    pesudo_flag = False
-    mid = length//2
+def check_palindrome(string: str, left: int, right: int, flag: bool) -> int:
+    if left >= right:
+        if flag:
+            return 1
+        else:
+            return 0
 
-    if length % 2 == 0:
-        left = mid-1
-        right = mid
-
-        while True:
-            if left < 0 or length <= right:
-                break
-            if string[left] == string[right]:
-                left -= 1
-                right += 1
-                continue
-
-            if left-1 < 0 or length <= right+1:
-                return 2
-
-            if not pesudo_flag:
-                pesudo_flag = True
-            else:
-                return 2
-
-            if string[left-1] == string[right+1]:
-                left -= 1
-                right += 1
-            else:
-                return 2
+    if string[left] == string[right]:
+        return check_palindrome(string, left+1, right-1, flag)
     else:
-        left = mid-1
-        right = mid+1
-
-        if not string[left] == string[right]:
-            if string[mid] == string[right]:
-                left = mid
-                pesudo_flag = True
-            elif string[mid] == string[left]:
-                right = mid
-                pesudo_flag = True
-
-        while True:
-            if left < 0 or length <= right:
-                break
-
-            if string[left] == string[right]:
-                left -= 1
-                right += 1
-                continue
-
+        if string[left+1] == string[right] or string[left] == string[right-1]:
+            if flag:
+                return 2
+            flag = True
+            return min(check_palindrome(string, left+1, right, flag), check_palindrome(string, left, right-1, flag))
+        else:
             return 2
-
-            # if not pesudo_flag:
-            #     pesudo_flag = True
-            # else:
-            #     return 2
-
-            # if string
-
-    if pesudo_flag:
-        return 1
-    return 0
 
 
 def main():
     t = int(In())
     for _ in range(t):
         string = In().rstrip()
-        print(check_palindrome(string))
+        print(check_palindrome(string, 0, len(string)-1, False))
 
 
 if __name__ == "__main__":
