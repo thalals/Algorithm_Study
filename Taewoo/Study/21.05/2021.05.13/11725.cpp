@@ -20,6 +20,7 @@ void dfs(int idx) {
 int main() {
     int t;
     cin >> t;
+    graph.resize(t + 1, 0);
     pa.resize(t + 1, 0);
     for(int i = 0; i < t - 1; i++) {
         int s, e;
