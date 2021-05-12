@@ -3,31 +3,31 @@ import sys
 from collections import deque, defaultdict
 
 In = sys.stdin.readline
+n = int(In())
+tree = defaultdict(list)
 
 
 def bfs(tree):
-    visited = []
+    visited = [False] * (n+1)
     answer = dict()
 
     queue = deque()
     queue.append(1)
-    visited.append(1)
+    visited[1] = True
 
     while queue:
         node = queue.popleft()
 
         for x in tree[node]:
-            if x not in visited:
+            if not visited[x]:
                 answer[x] = node
-                visited.append(x)
+                visited[x] = True
                 queue.append(x)
 
     return answer
 
 
 def main():
-    n = int(In())
-    tree = defaultdict(list)
 
     for _ in range(n-1):
         n1, n2 = map(int, In().split())
