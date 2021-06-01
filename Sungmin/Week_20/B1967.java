@@ -19,6 +19,7 @@ public class B1967 {
 		BufferedReader input=new BufferedReader(new InputStreamReader(System.in));
 		int n=Integer.parseInt(input.readLine());
 		boolean[] visited=new boolean[n+1];
+		int childindex=0;
 		for(int i=0;i<=n;i++) tree.add(new ArrayList<Node>());
 		for(int i=0;i<n-1;i++) {
 			String[] s=input.readLine().split(" ");
@@ -27,28 +28,22 @@ public class B1967 {
 			int dist=Integer.parseInt(s[2]);
 			tree.get(par).add(new Node(child,dist));
 			tree.get(child).add(new Node(par,dist));
+			childindex=par;
 		}
-		for(int i=1;i<=n;i++) {
-			for(int i1=i+1;i1<=n;i1++) {
-				flag=false;
-				dfs(visited, i, i1, 0);
-				for(int i2=1;i2<=n;i2++) visited[i2]=false;
-			}
+		//childindex+1부터 n까지가 자식노드
+		for(int i=childindex+1;i<=n;i++) {
+			visited=new boolean[n+1];
+			dfs(visited,i,0);
 		}
 		System.out.print(result);
 		input.close();
 	}
-	static void dfs(boolean[] visited, int start, int end, int sum) {
+	static void dfs(boolean[] visited, int start, int sum) {
 		visited[start]=true;
-		if(start==end) {
-			if(sum>result)result=sum;
-			flag=true;
-			return;
-		}
+		if(sum>result)result=sum;
 		for(int i=0;i<tree.get(start).size();i++) {
 			int y=tree.get(start).get(i).num;
-			if(!visited[y])dfs(visited, y, end, sum+tree.get(start).get(i).dist);
-			if(flag)return;
+			if(!visited[y])dfs(visited, y,  sum+tree.get(start).get(i).dist);
 		}
 	}
 }
