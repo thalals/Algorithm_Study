@@ -42,7 +42,6 @@ n = int(sys.stdin.readline())
 
 result = []
 
-
 for i in range(n):
     command = sys.stdin.readline().split()
 
