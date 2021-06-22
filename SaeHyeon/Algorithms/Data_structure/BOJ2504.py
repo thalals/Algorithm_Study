@@ -1,3 +1,6 @@
+#Problem : https://www.acmicpc.net/problem/2504
+#Comment : IndexError뜸
+
 import sys
 input=sys.stdin.readline
 
