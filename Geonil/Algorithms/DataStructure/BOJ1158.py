@@ -1,6 +1,6 @@
 '''
 problem : 요세푸스 문제 (BOJ 1158)
-comment : 
+comment : 이중(next, prev) 원형 연결 리스트
 '''
 import sys
 
