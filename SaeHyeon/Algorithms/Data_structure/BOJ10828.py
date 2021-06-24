@@ -1,3 +1,6 @@
+#Problem : https://www.acmicpc.net/problem/10828
+#Comment : 해결
+
 import sys
 input=sys.stdin.readline
 
