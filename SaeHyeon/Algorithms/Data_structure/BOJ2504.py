@@ -58,11 +58,15 @@ def parentheses(s):
 
 def main():
     st=input().rstrip()
-    
-    if not correct(st):
-        print(0)
+
+    if len(st)>=1 and len(st)<=30:
+        if not correct(st):
+            print(0)
+        else:
+            print(parentheses(st))
     else:
-        print(parentheses(st))
+        print(0)
+    
 
 if __name__ == '__main__':
     main()
