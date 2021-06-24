@@ -18,16 +18,22 @@ int main() {
         }
     }
 
-    int size = pow(2, pos.size());
-    for(int i = 0; i < size; i++) {
+    int size = 1 << pos.size();
+    for(int i = 1; i < size; i++) {
         string newStr = s;
         for(int j = 0; j < pos.size(); j++) {
-            if(i & j) {
+            if(i & (1 << j)) { // i % 2 == 1
                 newStr[pos[j].first] = ' ';
                 newStr[pos[j].second] = ' ';
             }
+            // i /= 2;
         }
-        answers.insert(newStr.erase(remove(newStr.begin(), newStr.end(), ' ')), newStr.end());
-    }
 
+        string newnewStr;
+        for(char c : newStr) {
+            if(c != ' ') newnewStr += c;
+        }
+        answers.insert(newnewStr);
+    }
+    for(string s : answers) cout << s << '\n';
 }
