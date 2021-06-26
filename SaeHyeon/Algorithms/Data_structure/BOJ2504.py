@@ -1,6 +1,3 @@
-#Problem : https://www.acmicpc.net/problem/2504
-#Comment : IndexError뜸
-
 import sys
 input=sys.stdin.readline
 
@@ -34,6 +31,8 @@ def parentheses(s):
     cnt=0
     result=[0]
     for i in range(len(s)):
+        if cnt <0:
+            return 0
         if s[i] == '(':
             stack.append(2)
             cnt+=1
@@ -44,9 +43,6 @@ def parentheses(s):
             cnt-=1
         if cnt == 0:
             while stack:
-                if len(stack)==1:
-                    result[-1]+=stack.pop()
-                    break 
                 if len(stack)%2 == 0:
                     result[-1] += stack.pop()
                 elif len(stack)%2 == 1:
@@ -58,15 +54,11 @@ def parentheses(s):
 
 def main():
     st=input().rstrip()
-
-    if len(st)>=1 and len(st)<=30:
-        if not correct(st):
-            print(0)
-        else:
-            print(parentheses(st))
-    else:
-        print(0)
     
+    if not correct(st):
+        print(0)
+    else:
+        print(parentheses(st))
 
 if __name__ == '__main__':
     main()
