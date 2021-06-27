@@ -739,3 +739,4 @@ FodyWeavers.xsd
 *.tlog
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,visualstudio,eclipse,python,pycharm+all,intellij+all
+Seunghwan/.vscode/launch.json
