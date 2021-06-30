@@ -1,5 +1,5 @@
 '''
-problem : 데크 (BOJ 10866)
+problem : 덱 (BOJ 18258)
 comment : deque 이용 구현
 '''
 import sys
