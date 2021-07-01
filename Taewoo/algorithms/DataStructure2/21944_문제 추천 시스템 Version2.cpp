@@ -72,10 +72,13 @@ void pro() {
             }
             else {
                 auto it = _set.lower_bound({l, 1});
+                if(it == _set.begin()) {
+                    cout << -1 << '\n';
+                    continue;
+                }
                 it--;
                 if(it != _set.end()) {
-                    if((*it).first < l) cout << it->second << '\n';
-                    else cout << -1 << '\n';
+                    cout << it->second << '\n';
                 }
                 else cout << -1 << '\n';
             }
