@@ -1,3 +1,6 @@
+/* 힙은 우선순위 큐를 이용
+ * 역 정렬은 Collections.reversOrders
+ */
 package DataStructure2;
 
 import java.io.BufferedReader;
