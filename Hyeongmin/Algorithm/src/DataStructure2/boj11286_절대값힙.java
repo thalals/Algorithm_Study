@@ -1,5 +1,5 @@
 /* Class 를 만들어서 절대값과 실제 수를 저장
- * 정렬은 절대값으로
+ * 정렬은 절대값으로g
  * 
  */
 package DataStructure2;
