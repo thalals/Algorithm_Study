@@ -2,9 +2,7 @@ import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 import java.lang.*
-import java.lang.Math.*
 import java.util.*
-import kotlin.properties.Delegates
 
 var sb = StringBuilder()
 var scan = FastReader()
