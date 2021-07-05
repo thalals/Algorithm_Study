@@ -1,6 +1,6 @@
 '''
 problem : 풍선 터뜨리기 (BOJ 2346)
-comment : 
+comment : 덱 이용 원형 구현
 '''
 import sys
 from collections import deque, defaultdict
