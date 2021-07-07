@@ -7,29 +7,27 @@ from collections import defaultdict
 
 In = sys.stdin.readline
 
+alpha = ("A", "C", "G", "T")
 
-def hamming_distance(dna1, dna2):
+
+def solve(n, m, dna_lst):
+    dna = ""
     distance = 0
-    print(dna1, dna2)
-    for d1, d2 in zip(dna1, dna2):
-        if not d1 == d2:
-            distance += 1
-    print(distance)
-    print()
-    return distance
 
+    for j in range(m):
+        dna_distance = defaultdict(int)
+        for i in range(n):
+            dna_distance[dna_lst[i][j]] += 1
+        max_ = max(dna_distance.values())
+        flag = False
+        for c in alpha:
+            if dna_distance[c] == max_ and not flag:
+                dna += c
+                flag = True
+            else:
+                distance += dna_distance[c]
 
-def solve(n, dna_lst):
-    dna_distance = defaultdict(int)
-
-    for i in range(n - 1):
-        for j in range(i + 1, n):
-            hd = hamming_distance(dna_lst[i], dna_lst[j])
-            dna_distance[i] += hd
-            dna_distance[j] += hd
-
-    print(min(dna_distance.values()))
-    print(dna_distance)
+    return dna, distance
 
 
 def main():
@@ -38,8 +36,8 @@ def main():
     dna_lst = []
     for _ in range(n):
         dna_lst.append(In().rstrip())
-    dna_lst.sort()
-    solve(n, dna_lst)
+    dna, distance = solve(n, l, dna_lst)
+    print("\n".join([dna, str(distance)]))
 
 
 if __name__ == "__main__":
