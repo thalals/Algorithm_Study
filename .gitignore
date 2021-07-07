@@ -3,3 +3,4 @@
 # ignore all files in .vscode directory
 .vscode/
 .exe/
+.venv/
