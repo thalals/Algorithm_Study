@@ -55,11 +55,11 @@ class Clock(object):
     def find(self, k):
         cnt = 0
         while True:
+            if k in self.second or k in self.minute or k in self.hour:
+                cnt += 1
             self.seconds()
             if self.hour[0] * 10 + self.hour[1] == self.num + 1:
                 break
-            if k in self.second or k in self.minute or k in self.hour:
-                cnt += 1
 
         return cnt
 
