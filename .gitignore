@@ -1,4 +1,8 @@
 
+# ignore all files in .vscode directory
+.vscode/
+.exe/
+.venv/
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,visualstudio,eclipse,python,pycharm+all,intellij+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,visualstudio,eclipse,python,pycharm+all,intellij+all
 
