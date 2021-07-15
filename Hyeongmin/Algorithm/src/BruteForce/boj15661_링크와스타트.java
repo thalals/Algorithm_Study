@@ -15,7 +15,7 @@ public class boj15661_링크와스타트 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		int n = Integer.parseInt(br.readLine());
-
+		
 		S = new int[n][n];
 		visit = new boolean[n];
 		
