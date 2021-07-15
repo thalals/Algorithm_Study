@@ -17,12 +17,10 @@ def dfs(cnt):
             continue
 
         #visited[i]=True
-        for j in range(i):
-            visited[j]=True
         arr.append(number[i])
         dfs(cnt+1)
         arr.pop()
-        for z in range(i+1,N):
-            visited[z]=False
+        # for j in range(i+1,N):
+        #     visited[j]=False
 
 dfs(0)
