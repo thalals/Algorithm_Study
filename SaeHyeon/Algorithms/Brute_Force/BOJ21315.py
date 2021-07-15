@@ -1,9 +1,15 @@
+#Problem : https://www.acmicpc.net/problem/21315
+#Comment : 결과는 맞는데 시간초과 나옴
+
 import sys
-from itertools import permutations
+from itertools import product
 input=sys.stdin.readline
 
 N=int(input())
-number=[i for i in range(1,N+1)]
+number=[]
+for i in range(1,N):
+    if (2**i) < N:
+        number.append(i)
 card=list(map(int,input().split()))
 
 def solve(dumy_card,k):
@@ -21,10 +27,11 @@ def solve(dumy_card,k):
                 continue
     #print(dumy_card)
     return dumy_card
-    
+
 
 def shuffle():
-    for i in permutations(number,2):
+    for i in product(number,repeat=2):
+        # print(i)
         dumy_card=[i for i in range(1,N+1)]
         if card == solve(solve(dumy_card,i[0]),i[1]):
             print(i[0],end=' ')
