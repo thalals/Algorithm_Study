@@ -17,3 +17,4 @@ for m in range(M):
             for nd in range(-N,N):
                 if md==0 and nd == 0:
                     continue
+                string=[]
