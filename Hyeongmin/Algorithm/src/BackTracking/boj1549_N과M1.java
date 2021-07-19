@@ -3,6 +3,7 @@ package BackTracking;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 //Combination Á¶ÇÕ
 public class boj1549_N°úM1 {
