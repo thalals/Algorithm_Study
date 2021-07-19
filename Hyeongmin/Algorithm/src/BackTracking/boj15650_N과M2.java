@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 //Combination 조합
-public class boj1549_N과M1 {
+public class boj15650_N과M2 {
 	static boolean visit[];
 
 	public static void main(String[] args) throws IOException {
@@ -17,11 +17,17 @@ public class boj1549_N과M1 {
 		int m = Integer.parseInt(temp[1]);
 
 		visit = new boolean[n];
-
-		Combination(n, m, new int[m], 0);
+		int[] result = new int[m];
+		
+		for(int i=0;i<n;i++) {
+			visit[i] = true;
+			result[0] = i+1;
+			Combination(n, m, result, 1, i);
+			
+		}
 	}
 
-	public static void Combination(int n, int m, int result[], int count) {
+	public static void Combination(int n, int m, int result[], int count, int start) {
 		if (count == m) {
 			for (int a = 0; a < m - 1; a++)
 				System.out.print(result[a] + " ");
@@ -30,11 +36,11 @@ public class boj1549_N과M1 {
 			return;
 		}
 
-		for (int i = 0; i < n; i++) {
+		for (int i = start; i < n; i++) {
 			if (visit[i] == false) {
 				result[count] = i + 1;
 				visit[i] = true;
-				Combination(n, m, result, count + 1);
+				Combination(n, m, result, count + 1, i);
 				visit[i] = false;
 			}
 		}

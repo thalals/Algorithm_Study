@@ -5,34 +5,44 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-//Combination 조합
-public class boj1549_N과M1 {
-	static boolean visit[];
+public class boj15653_N과M5 {
 
+	static boolean visit[];
+	static int list[];
+	static StringBuilder sb = new StringBuilder();
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String temp[] = br.readLine().split(" ");
 
 		int n = Integer.parseInt(temp[0]);
 		int m = Integer.parseInt(temp[1]);
-
+		list = new int[n];
+		
+		temp = br.readLine().split(" ");
+		
+		for(int i=0;i<n;i++)
+			list[i] = Integer.parseInt(temp[i]);
+		
+		Arrays.sort(list);
 		visit = new boolean[n];
 
 		Combination(n, m, new int[m], 0);
+		System.out.println(sb.toString());
 	}
 
 	public static void Combination(int n, int m, int result[], int count) {
 		if (count == m) {
 			for (int a = 0; a < m - 1; a++)
-				System.out.print(result[a] + " ");
-			System.out.println(result[m - 1]);
+				sb.append(result[a] + " ");
+			sb.append(result[m - 1]+"\n");
 
 			return;
 		}
 
 		for (int i = 0; i < n; i++) {
 			if (visit[i] == false) {
-				result[count] = i + 1;
+				result[count] = list[i];
 				visit[i] = true;
 				Combination(n, m, result, count + 1);
 				visit[i] = false;
