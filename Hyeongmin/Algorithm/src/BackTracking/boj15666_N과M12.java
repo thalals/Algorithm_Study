@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class boj15665_N°úM11 {
+public class boj15666_N°úM12 {
 	static boolean visit[];
 	static int list[];
 	static StringBuilder sb = new StringBuilder();
