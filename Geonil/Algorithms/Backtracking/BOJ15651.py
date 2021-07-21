@@ -1,6 +1,6 @@
 """
-problem : N과 M 2 (BOJ 15651)
-comment : itertools.combinations 이용
+problem : N과 M 3 (BOJ 15651)
+comment : itertools.product 이용
 """
 import sys
 from itertools import product
