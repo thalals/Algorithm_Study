@@ -43,7 +43,7 @@ public class boj15665_N°úM11 {
 			return;
 		}
 
-		for (int i = start; i < n; i++) {
+		for (int i = 0; i < n; i++) {
 
 			if (hashset.isEmpty()) {
 
