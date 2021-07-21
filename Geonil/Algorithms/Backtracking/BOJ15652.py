@@ -1,5 +1,5 @@
 """
-problem : N과 M 4 (BOJ 15651)
+problem : N과 M 4 (BOJ 15652)
 comment : itertools.combinations_with_replacement 이용
 """
 import sys
