@@ -1,10 +1,9 @@
 """
 problem : 외판원 순회 2 (BOJ 10971)
-comment : 
+comment : dfs 이용
 """
 import sys
 from itertools import permutations
-from typing import ForwardRef
 
 In = sys.stdin.readline
 N = int(In())
