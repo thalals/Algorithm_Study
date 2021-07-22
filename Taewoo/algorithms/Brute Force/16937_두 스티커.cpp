@@ -20,10 +20,10 @@ bool check(int r1, int c1, int r2, int c2) {
 }
 
 bool isOk(int r1, int c1, int r2, int c2) {
-    if(check(r1, c1, r2, c2)) return true; // ì•ˆ, ì•ˆ
-    if(check(c1, r1, r2, c2)) return true; // íšŒ, ì•ˆ
-    if(check(r1, c1, c2, r2)) return true; // ì•ˆ, íšŒ
-    if(check(c1, r1, c2, r2)) return true; // íšŒ, íšŒ
+    if(check(r1, c1, r2, c2)) return true; // ?•ˆ, ?•ˆ
+    if(check(c1, r1, r2, c2)) return true; // ?šŒ, ?•ˆ
+    if(check(r1, c1, c2, r2)) return true; // ?•ˆ, ?šŒ
+    if(check(c1, r1, c2, r2)) return true; // ?šŒ, ?šŒ
     return false;
 }
 
