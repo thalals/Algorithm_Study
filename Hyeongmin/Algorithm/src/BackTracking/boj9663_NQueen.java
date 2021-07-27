@@ -9,137 +9,50 @@ public class boj9663_NQueen {
 	static int n;
 	static int map[][];
 	static boolean visit[][];
-	static int result =0;
-	
-	static int queen[] = new int[16];	//queen[열] = 행
+	static int result = 0;
 
-	public static void main(String[] args) throws IOException{
+	static int queen[]; // queen[행] = 열
+
+	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
+
 		n = Integer.parseInt(br.readLine());
+		queen = new int[n];
 		
-		map = new int[n][n];
-		visit = new boolean[n][n];
-		
-		dfs(0,0);
-		
-//		Arrays.fill(queen, -1);
-		
-//		batch(0);
+//		Arrays.fill(queen, -18);
+		backTracking(0);
+
 		System.out.println(result);
 	}
-	
-	//idx : 행
-	public static void batch(int idx) {
-		if(idx == n-1) {
-			result++; 
-			return;
-		}
-		//열에 배치
-		for(int i=0;i<n;i++) {
-			//해당 열을 방문하지 않았다면
-			if(queen[i] == -1) {
-				queen[i] = idx;
-				
-				if(check(idx, i))	//x,y
-					batch(idx+1);
-				
-				queen[i] = -1;
-			}
-		}	
-//		batch(idx+1);
-	}
-	
-	//열은 중복되지 않음
-	//행, 대각선 퀸 존재하는지 체크
-	//type(x,y) : 행 열
-	public static boolean check(int x, int y) {
-		//이전 열까지 확인
-		for(int i=0;i<y;i++) {
-			
-			//각 열 중에 행의 위치가 같거나 대각선의 길이가 같은 것
-			if(queen[i]==queen[y] || Math.abs(i-y) == Math.abs(queen[i] - queen[y]) ) 
-				return false;
-		}
-		
-		return true;
-	}
-	
-	
-	public static void dfs (int cnt, int q) {
-		if(cnt == n*n) {
-			if(q==n)
-				result++;
-			return;
-		}
-		if(q==n) {
+
+	// idx : 행
+	private static void backTracking(int idx) {
+		// 탈출 조건
+		if (idx == n ) {
 			result++;
 			return;
 		}
-		
-		
-		int x = cnt/n;
-		int y = cnt%n;
-		
-		
-		if(!visit[x][y]) {
-			if(checking(x,y)) {
-//				InVisit(x,y);
-				visit[x][y] = true;
-				dfs(cnt+1, q+1);
-//				OutVisit(x, y);
-			}
+
+		// i : 열값
+		for (int i = 0; i < n; i++) {
+			// 첫 행 (비교 x)
+			queen[idx] = i;
+			// check true면 다음 행으로/ 퀸을 놓을 수 없으면 다음 열값을 저장해서 확인
+			if (idx == 0 || check(idx))
+				backTracking(idx + 1);
+
 		}
-		dfs(cnt+1,q);
 	}
-	public static boolean checking(int x, int y) {
-		//행 열 대각선 확인
-		//행
-		for(int i=0;i<n;i++) {
-			if(visit[i][y]==true || visit[x][i]==true )
-				return false;
-			if(x-i>=0 && y+i<n && visit[x-i][y+i]==true)
-				return false;
-			if(x+i<n && y-i>=0 && visit[x+i][y-i] == true)
+
+	public static boolean check(int check) {
+		for (int j = 0; j < check; j++) {
+			// queen[j(행)] : 열값 == queen[check(현재 행)] : 열값
+			// j- check(행 거리) == 열거리 -> 대각선 상에 존재
+			if (queen[j] == queen[check] ||check - j == Math.abs(queen[j] - queen[check]))
 				return false;
 		}
-		
+
 		return true;
-	}
-	public static void InVisit(int x, int y) {
-		for(int i=0;i<n;i++) {
-			visit[i][y] = true;
-			visit[x][i] = true;
-			
-			if(x-i>=0 && y-i >=0) 
-				visit[x-i][y-i] = true;
-			
-			if(x+i<n && y+i<n)
-				visit[x+i][y+i] = true;
-			
-			if(x-i>=0 && y+i<n)
-				visit[x-i][y+i] = true;
-			if(x+i<n && y-i>=0)
-				visit[x+i][y-i] = true;
-
-		}
-	}
-
-	public static void OutVisit(int x, int y) {
-		for(int i=0;i<n;i++) {
-			visit[i][y] = false;
-			visit[x][i] = false;
-			
-			if(x-i>=0 && y-i >=0) 
-				visit[x-i][y-i] = false;
-			
-			if(x+i<n && y+i<n)
-				visit[x+i][y+i] = false;
-			if(x-i>=0 && y+i<n)
-				visit[x-i][y+i] = false;
-			if(x+i<n && y-i>=0)
-				visit[x+i][y-i] = false;
-		}
 	}
 
 }
