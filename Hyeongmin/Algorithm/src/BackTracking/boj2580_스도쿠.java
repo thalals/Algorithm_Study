@@ -57,49 +57,43 @@ public class boj2580_스도쿠 {
 		
 		
 		//숫자 채우기
+		//type ( 행, zero 위치)
 		dfs(0,0);
+
 		
 	}
 	
 	//idx : 행
-	public static void dfs (int idx, int count) {
+	public static void dfs (int idx, int x_index) {
 		//마지막까지 도달 했거나, 그런 경우가 있을 때
 		if( idx==9) {
 			for(int i=0;i<9;i++) {
 				for(int j=0;j<8;j++)
 					System.out.print(map[i][j]+" ");
-				System.out.print(map[i][8]);
+				System.out.println(map[i][8]);
 			}
 			
 			System.exit(0);//강제 종료
 		}
 		
+		if(Zero_Position[idx].size()==0)
+			dfs(idx+1,0);
+		
 		//idx 행
 		//0인 위치 ( , idx)
-		//0인 위치 (idx,zero_position[idx].get(index))
-		for(int i=0;i<Zero_Position[idx].size();i++) {
-			int y = (int) Zero_Position[idx].get(0);
+		
+		//각 행 당 빈자리 
+		int x = (int) Zero_Position[idx].get(x_index);
+		for(int i=1;i<10;i++) {
+			map[x][idx] = i;
 			
-			for(int j=0;j<Positive_Number[idx].size();j++) {
-				if(!visit[idx].contains(Positive_Number[idx].get(j)))
-					continue;
-				map[y][idx] = (int) Positive_Number[idx].get(j);
-				
-				//check 열 중복 / 3*3중복
-				if(check(y,idx)) {
-					visit[idx].remove(Positive_Number[idx].indexOf(Positive_Number[idx].get(j)));
-					
-					if(count == Zero_Position[idx].size()-1)
-						dfs(idx+1,0);
-					else
-						dfs(idx,count+1);
-					
-					visit[idx].add(Positive_Number[idx].get(j));
-			
-				}
-				
-			}			
-			
+			if(check(x, idx)) {
+				if(x_index == Zero_Position[idx].size()-1)
+					dfs(idx+1,0);
+				else
+					dfs(idx,x_index+1);
+			}
+			map[x][idx] = 0;
 		}
 	}
 	
@@ -116,6 +110,15 @@ public class boj2580_스도쿠 {
 				return false;
 		}
 		
+		//행 중복 체크
+		for(int i=0;i<9;i++) {
+			if(x==i)
+				continue;
+			int a = map[x][y];
+			int b = map[i][y];
+			if(a==b)
+				return false;
+		}
 		
 		int row = (x/3) *3;
 		int column = (y/3)*3;
