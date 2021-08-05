@@ -33,8 +33,12 @@ for i in range(n):
     for j in range(len(arr)):
         if arr[j]=='x':
             s+=str(check(i,j))
-        elif arr[j]=='.':
-            s+='.'
+        elif (i,j) in dic.keys():
+            s+='*'
+        else:
+            if arr[j]=='.':
+                s+='.'
+         
     result.append(s)
 
 for i in range(len(result)):

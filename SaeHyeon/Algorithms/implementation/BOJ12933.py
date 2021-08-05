@@ -3,58 +3,80 @@
 import sys
 input=sys.stdin.readline
 
-ori='quack'
-#ori=["q",'u','a','c','k']
 s=list(input().rstrip())
 
 cs=[]
-boo=False
+check=False
 for i in range(len(s)):
-    # if cs[0]==ori:
-    #     break
-    if i ==0:
-        if not s[i]=='q':
-            print(-1)
+    if i==0:
+        if s[i]=='q':
+            cs.append('q')
+            continue
+        else:
+            check=False
             break
-        cs.append('q')
-        continue
-
-    if s[i]=='q':
-        for j in range(len(cs)):
-            if not cs[j][-1]=='k':
-                cs.append('q')
-                break
-            if cs[j][-1]=='k':
-                cs[j]+=s[i]
-                break
 
     if s[i]=='u':
+        check=False
         for j in range(len(cs)):
             if cs[j][-1]=='q':
                 cs[j]+=s[i]
+                check=True
                 break
+        if check==False:
+            break
 
 
     if s[i]=='a':
+        check=False
         for j in range(len(cs)):
             if cs[j][-1]=='u':
                 cs[j]+=s[i]
+                check=True
                 break
-
+        if check==False:
+            break
+    
     if s[i]=='c':
+        check=False
         for j in range(len(cs)):
             if cs[j][-1]=='a':
                 cs[j]+=s[i]
+                check=True
                 break
-
+        if check==False:
+            break
+    
     if s[i]=='k':
+        check=False
         for j in range(len(cs)):
             if cs[j][-1]=='c':
                 cs[j]+=s[i]
+                check=True
                 break
+        if check==False:
+            break
 
-            
+    if s[i]=='q':
+        b=False
+        for j in range(len(cs)):
+            if cs[j][-1]=='k':
+                cs[j]+=s[i]
+                b=True
+                break
+        if not b:
+            cs.append('q')
 
-    
-print(cs)    
-print(len(cs))
+ori='quack'
+if len(s)%5==0:
+    if check==False:
+        print(-1)
+    else:
+        for i in range(len(cs)):
+            cs[i]=cs[i].replace(ori,"")
+        if len(cs[i])==0:
+            print(len(cs))
+        else:
+            print(-1)
+else:
+    print(-1)
